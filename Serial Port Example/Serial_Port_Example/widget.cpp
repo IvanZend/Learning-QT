@@ -8,7 +8,7 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
 
     // Disable maximizing
-    setFixedSize(width(), height());
+    //setFixedSize(width(), height());
 
     // Adding title for widget
     QWidget::setWindowTitle("Serial Port Example");
