@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSerialPort>
 #include <QSerialPortInfo>
+#include <QSettings>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -32,5 +33,7 @@ private:
     QString buffer;
     QString code;
     int codeSize;
+    //QString settings_file;
+    QSettings settings;
 };
 #endif // WIDGET_H

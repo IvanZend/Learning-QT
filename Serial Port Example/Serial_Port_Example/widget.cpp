@@ -52,6 +52,10 @@ Widget::Widget(QWidget *parent)
     ui->comboBox_6->addItem("Hardware Flow Control");
     ui->comboBox_6->addItem("Software Flow Control");
 
+    QCoreApplication::setOrganizationName("MySoft");
+    QCoreApplication::setOrganizationDomain("mysoft.com");
+    QCoreApplication::setApplicationName("Star Runner");
+
 }
 
 Widget::~Widget()
@@ -73,6 +77,10 @@ void Widget::on_pushButton_2_clicked()
         ui->textBrowser->append("!!!! Something went Wrong !!!!");
     }
     else {
+
+        //settings("uart_baudrate", 8);
+        //QSettings obj4("uart_baudrate");
+        ui->label_8->setText(settings.value("uart_baudrate").toString());
 
         QString stringbaudRate = ui->comboBox_2->currentText();
         int intbaudRate = stringbaudRate.toInt();
@@ -136,8 +144,12 @@ void Widget::on_pushButton_2_clicked()
         codeSize = code.size();
 
         connect(&serialPort,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
-    }
 
+        //settings_file = QApplication::applicationDirPath() + "demosettings.ini";
+
+        settings.setValue("uart_baudrate", serialPort.baudRate());
+        ui->label_8->setText(settings.value("uart_baudrate").toString());
+    }
 
 }
 
