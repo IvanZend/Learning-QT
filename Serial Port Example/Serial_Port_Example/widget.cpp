@@ -1,6 +1,9 @@
 #include "widget.h"
 #include "ui_widget.h"
 
+
+QSettings settings("uart_baudrate");
+
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -52,10 +55,9 @@ Widget::Widget(QWidget *parent)
     ui->comboBox_6->addItem("Hardware Flow Control");
     ui->comboBox_6->addItem("Software Flow Control");
 
-    QCoreApplication::setOrganizationName("MySoft");
-    QCoreApplication::setOrganizationDomain("mysoft.com");
-    QCoreApplication::setApplicationName("Star Runner");
 
+    ui->label_8->setText(settings.value("uart_baudrate").toString());
+    //connect(this, SLOT(clicked()), this, SLOT(on_pushButton_6_clicked()));
 }
 
 Widget::~Widget()
@@ -77,10 +79,6 @@ void Widget::on_pushButton_2_clicked()
         ui->textBrowser->append("!!!! Something went Wrong !!!!");
     }
     else {
-
-        //settings("uart_baudrate", 8);
-        //QSettings obj4("uart_baudrate");
-        ui->label_8->setText(settings.value("uart_baudrate").toString());
 
         QString stringbaudRate = ui->comboBox_2->currentText();
         int intbaudRate = stringbaudRate.toInt();
@@ -211,3 +209,8 @@ void Widget::on_pushButton_5_clicked()
     ui->textBrowser->clear();
 }
 
+void Widget::on_pushButton_6_clicked()
+{
+   //uart_settings.show();
+    d.show();
+}

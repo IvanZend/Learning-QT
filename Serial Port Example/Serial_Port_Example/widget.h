@@ -5,6 +5,9 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QSettings>
+#include <QDialog>
+
+#include "dialog_0.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -25,6 +28,7 @@ private slots:
     void on_pushButton_3_clicked();
     void on_pushButton_4_clicked();
     void on_pushButton_5_clicked();
+    void on_pushButton_6_clicked();
 
 private:
     Ui::Widget *ui;
@@ -33,7 +37,24 @@ private:
     QString buffer;
     QString code;
     int codeSize;
+    Dialog d;
+    //QDialog uart_settings;
     //QString settings_file;
-    QSettings settings;
+
 };
+
+
+/*
+class Dialog : public QDialog
+{
+    Q_OBJECT
+
+    public:
+    Dialog(QDialog *parent = nullptr);
+
+
+};
+*/
+
+
 #endif // WIDGET_H

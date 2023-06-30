@@ -50,6 +50,7 @@ public:
     QProgressBar *progressBar;
     QProgressBar *progressBar_5;
     QLabel *label_8;
+    QPushButton *pushButton_6;
 
     void setupUi(QWidget *Widget)
     {
@@ -142,6 +143,9 @@ public:
         label_8->setTextFormat(Qt::AutoText);
         label_8->setScaledContents(false);
         label_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        pushButton_6 = new QPushButton(Widget);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setGeometry(QRect(70, 30, 111, 24));
 
         retranslateUi(Widget);
 
@@ -164,6 +168,7 @@ public:
         label_7->setText(QCoreApplication::translate("Widget", "Code", nullptr));
         pushButton_5->setText(QCoreApplication::translate("Widget", "Clear", nullptr));
         label_8->setText(QCoreApplication::translate("Widget", "0", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("Widget", "UART Settings", nullptr));
     } // retranslateUi
 
 };
