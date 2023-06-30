@@ -49,7 +49,7 @@ public:
         progressBar_5->setOrientation(Qt::Vertical);
         pushButton_6 = new QPushButton(Widget);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(70, 30, 111, 24));
+        pushButton_6->setGeometry(QRect(370, 220, 91, 41));
 
         retranslateUi(Widget);
 

@@ -2,14 +2,29 @@
 #define WIDGET_H
 
 #include <QWidget>
-
 #include <QDialog>
+#include <QMenu>
+#include <QMenuBar>
+#include <QMainWindow>
 
 #include "dialog_0.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
+
+class MenuBar : public QMenuBar
+{
+    Q_OBJECT
+
+
+public:
+    MenuBar(QWidget *parent);
+    MenuBar(QMainWindow *parent);
+    ~MenuBar();
+
+
+};
 
 class Widget : public QWidget
 {
@@ -28,6 +43,9 @@ private:
     //QDialog uart_settings;
     //QString settings_file;
 
+    //MenuBar main_menu();
+
+    QMenu file_menu;
 };
 
 

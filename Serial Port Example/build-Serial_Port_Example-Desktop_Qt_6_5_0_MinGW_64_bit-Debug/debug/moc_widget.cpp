@@ -36,6 +36,85 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
+struct qt_meta_stringdata_CLASSMenuBarENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSMenuBarENDCLASS = QtMocHelpers::stringData(
+    "MenuBar"
+);
+#else  // !QT_MOC_HAS_STRING_DATA
+struct qt_meta_stringdata_CLASSMenuBarENDCLASS_t {
+    uint offsetsAndSizes[2];
+    char stringdata0[8];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_CLASSMenuBarENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSMenuBarENDCLASS_t qt_meta_stringdata_CLASSMenuBarENDCLASS = {
+    {
+        QT_MOC_LITERAL(0, 7)   // "MenuBar"
+    },
+    "MenuBar"
+};
+#undef QT_MOC_LITERAL
+#endif // !QT_MOC_HAS_STRING_DATA
+} // unnamed namespace
+
+Q_CONSTINIT static const uint qt_meta_data_CLASSMenuBarENDCLASS[] = {
+
+ // content:
+      11,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+Q_CONSTINIT const QMetaObject MenuBar::staticMetaObject = { {
+    QMetaObject::SuperData::link<QMenuBar::staticMetaObject>(),
+    qt_meta_stringdata_CLASSMenuBarENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSMenuBarENDCLASS,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMenuBarENDCLASS_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<MenuBar, std::true_type>
+    >,
+    nullptr
+} };
+
+void MenuBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    (void)_o;
+    (void)_id;
+    (void)_c;
+    (void)_a;
+}
+
+const QMetaObject *MenuBar::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *MenuBar::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSMenuBarENDCLASS.stringdata0))
+        return static_cast<void*>(this);
+    return QMenuBar::qt_metacast(_clname);
+}
+
+int MenuBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QMenuBar::qt_metacall(_c, _id, _a);
+    return _id;
+}
+namespace {
+
+#ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSWidgetENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSWidgetENDCLASS = QtMocHelpers::stringData(
     "Widget",

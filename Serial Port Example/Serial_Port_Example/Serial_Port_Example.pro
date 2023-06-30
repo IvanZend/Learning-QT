@@ -19,6 +19,7 @@ HEADERS += \
 
 FORMS += \
     dialog_0.ui \
+    mainwindow.ui \
     widget.ui
 
 # Default rules for deployment.
