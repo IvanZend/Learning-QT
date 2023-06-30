@@ -21,19 +21,28 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QSplitter *splitter;
-    QProgressBar *progressBar;
     QProgressBar *progressBar_5;
     QPushButton *pushButton_6;
+    QSplitter *splitter;
+    QProgressBar *progressBar;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
         Widget->resize(986, 558);
+        progressBar_5 = new QProgressBar(Widget);
+        progressBar_5->setObjectName("progressBar_5");
+        progressBar_5->setEnabled(true);
+        progressBar_5->setGeometry(QRect(300, 230, 24, 124));
+        progressBar_5->setValue(24);
+        progressBar_5->setOrientation(Qt::Vertical);
+        pushButton_6 = new QPushButton(Widget);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setGeometry(QRect(550, 350, 91, 41));
         splitter = new QSplitter(Widget);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(80, 100, 24, 124));
+        splitter->setGeometry(QRect(260, 230, 24, 124));
         splitter->setOrientation(Qt::Horizontal);
         progressBar = new QProgressBar(splitter);
         progressBar->setObjectName("progressBar");
@@ -41,15 +50,6 @@ public:
         progressBar->setValue(24);
         progressBar->setOrientation(Qt::Vertical);
         splitter->addWidget(progressBar);
-        progressBar_5 = new QProgressBar(Widget);
-        progressBar_5->setObjectName("progressBar_5");
-        progressBar_5->setEnabled(true);
-        progressBar_5->setGeometry(QRect(120, 100, 24, 124));
-        progressBar_5->setValue(24);
-        progressBar_5->setOrientation(Qt::Vertical);
-        pushButton_6 = new QPushButton(Widget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(370, 220, 91, 41));
 
         retranslateUi(Widget);
 

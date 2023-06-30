@@ -21,8 +21,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QMenuBar *menubar;
     QWidget *centralwidget;
+    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -30,12 +30,15 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(800, 600);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName("menubar");
-        MainWindow->setMenuBar(menubar);
+        MainWindow->setMinimumSize(QSize(0, 0));
+        MainWindow->setBaseSize(QSize(0, 0));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         MainWindow->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(MainWindow);
+        menubar->setObjectName("menubar");
+        menubar->setGeometry(QRect(0, 0, 800, 22));
+        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
