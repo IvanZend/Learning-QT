@@ -2,6 +2,9 @@
 #define DIALOG_0_H
 
 #include <QDialog>
+#include <QSerialPort>
+#include <QSerialPortInfo>
+#include <QSettings>
 
 namespace Ui {
 class Dialog;
@@ -15,8 +18,21 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void receiveMessage();
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
+    void on_pushButton_4_clicked();
+    void on_pushButton_5_clicked();
+
 private:
     Ui::Dialog *ui;
+    QSerialPort serialPort;
+    QSerialPortInfo info;
+    QString buffer;
+    QString code;
+    int codeSize;
 };
 
 #endif // DIALOG_0_H

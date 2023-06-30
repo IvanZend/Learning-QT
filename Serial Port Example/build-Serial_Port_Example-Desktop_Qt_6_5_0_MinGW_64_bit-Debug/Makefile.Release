@@ -273,6 +273,14 @@ release/moc_dialog_0.cpp: ../Serial_Port_Example/dialog_0.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPort \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialport.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qtserialportexports.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPortInfo \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSettings \
+		../../../../Qt/6.5.0/mingw_64/include/QtCore/qsettings.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.5.0/mingw_64/bin/moc.exe
 	C:\Qt\6.5.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/github/Learning-QT/Serial Port Example/build-Serial_Port_Example-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.5.0/mingw_64/mkspecs/win32-g++ -I"C:/github/Learning-QT/Serial Port Example/Serial_Port_Example" -IC:/Qt/6.5.0/mingw_64/include -IC:/Qt/6.5.0/mingw_64/include/QtWidgets -IC:/Qt/6.5.0/mingw_64/include/QtGui -IC:/Qt/6.5.0/mingw_64/include/QtSerialPort -IC:/Qt/6.5.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Serial_Port_Example\dialog_0.h -o release\moc_dialog_0.cpp
@@ -435,6 +443,9 @@ release/moc_widget.cpp: ../Serial_Port_Example/widget.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+		../Serial_Port_Example/dialog_0.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPort \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialport.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -443,8 +454,6 @@ release/moc_widget.cpp: ../Serial_Port_Example/widget.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSettings \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qsettings.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.5.0/mingw_64/bin/moc.exe
 	C:\Qt\6.5.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/github/Learning-QT/Serial Port Example/build-Serial_Port_Example-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.5.0/mingw_64/mkspecs/win32-g++ -I"C:/github/Learning-QT/Serial Port Example/Serial_Port_Example" -IC:/Qt/6.5.0/mingw_64/include -IC:/Qt/6.5.0/mingw_64/include/QtWidgets -IC:/Qt/6.5.0/mingw_64/include/QtGui -IC:/Qt/6.5.0/mingw_64/include/QtSerialPort -IC:/Qt/6.5.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\Serial_Port_Example\widget.h -o release\moc_widget.cpp
@@ -635,34 +644,15 @@ release/dialog_0.o: ../Serial_Port_Example/dialog_0.cpp ../Serial_Port_Example/d
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_dialog_0.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/QVariant \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QAbstractButton \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfuture.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qmutex.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qresultstore.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qthread.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qrunnable.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qexception.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qpromise.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialogButtonBox \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPort \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialport.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qtserialportexports.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPortInfo \
+		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSettings \
+		../../../../Qt/6.5.0/mingw_64/include/QtCore/qsettings.h \
+		ui_dialog_0.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\dialog_0.o ..\Serial_Port_Example\dialog_0.cpp
 
 release/main.o: ../Serial_Port_Example/main.cpp ../Serial_Port_Example/widget.h \
@@ -823,6 +813,9 @@ release/main.o: ../Serial_Port_Example/main.cpp ../Serial_Port_Example/widget.h 
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+		../Serial_Port_Example/dialog_0.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPort \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialport.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -831,8 +824,6 @@ release/main.o: ../Serial_Port_Example/main.cpp ../Serial_Port_Example/widget.h 
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSettings \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qsettings.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
@@ -1015,6 +1006,9 @@ release/widget.o: ../Serial_Port_Example/widget.cpp ../Serial_Port_Example/widge
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/QTransform \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+		../Serial_Port_Example/dialog_0.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/QSerialPort \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialport.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
@@ -1023,68 +1017,7 @@ release/widget.o: ../Serial_Port_Example/widget.cpp ../Serial_Port_Example/widge
 		../../../../Qt/6.5.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/QSettings \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qsettings.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QDialog \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
-		ui_widget.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/QVariant \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfuture.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfutureinterface.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qmutex.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qtsan_impl.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qresultstore.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qfuture_impl.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qthreadpool.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qthread.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qdeadlinetimer.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qelapsedtimer.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qrunnable.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qexception.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qpromise.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QComboBox \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qcombobox.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qstyleoption.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qvalidator.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qregularexpression.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qslider.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractslider.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qstyle.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qtabbar.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qrubberband.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtCore/qabstractitemmodel.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QLabel \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qlabel.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qpicture.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qtextdocument.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qtextcursor.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qtextformat.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QProgressBar \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qprogressbar.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QSplitter \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qsplitter.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QTextBrowser \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qtextbrowser.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qtextedit.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qabstractscrollarea.h
+		ui_widget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\widget.o ..\Serial_Port_Example\widget.cpp
 
 release/moc_dialog_0.o: release/moc_dialog_0.cpp 

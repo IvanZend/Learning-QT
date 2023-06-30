@@ -2,9 +2,7 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include <QSerialPort>
-#include <QSerialPortInfo>
-#include <QSettings>
+
 #include <QDialog>
 
 #include "dialog_0.h"
@@ -22,21 +20,10 @@ public:
     ~Widget();
 
 private slots:
-    void on_pushButton_2_clicked();
-    void receiveMessage();
-    void on_pushButton_clicked();
-    void on_pushButton_3_clicked();
-    void on_pushButton_4_clicked();
-    void on_pushButton_5_clicked();
     void on_pushButton_6_clicked();
 
 private:
     Ui::Widget *ui;
-    QSerialPort serialPort;
-    QSerialPortInfo info;
-    QString buffer;
-    QString code;
-    int codeSize;
     Dialog d;
     //QDialog uart_settings;
     //QString settings_file;
