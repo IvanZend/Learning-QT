@@ -7,7 +7,7 @@
 #include <QMenuBar>
 #include <QMainWindow>
 
-#include "dialog_0.h"
+#include "dialog_uart.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }

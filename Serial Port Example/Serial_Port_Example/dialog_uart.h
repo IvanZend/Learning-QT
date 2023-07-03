@@ -1,5 +1,5 @@
-#ifndef DIALOG_0_H
-#define DIALOG_0_H
+#ifndef DIALOG_UART_H
+#define DIALOG_UART_H
 
 #include <QDialog>
 #include <QSerialPort>
@@ -35,4 +35,4 @@ private:
     int codeSize;
 };
 
-#endif // DIALOG_0_H
+#endif // DIALOG_UART_H

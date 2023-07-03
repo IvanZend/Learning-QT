@@ -1,5 +1,5 @@
-#include "dialog_0.h"
-#include "ui_dialog_0.h"
+#include "dialog_uart.h"
+#include "ui_dialog_uart.h"
 
 
 QSettings settings("uart_baudrate");

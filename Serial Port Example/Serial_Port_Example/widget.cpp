@@ -39,7 +39,6 @@ MenuBar::MenuBar(QWidget *parent)
     : QMenuBar(parent)
 {
 
-
     // Disable maximizing
     //setFixedSize(width(), height());
     // Adding title for widget
