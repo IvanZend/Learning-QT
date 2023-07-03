@@ -1,8 +1,10 @@
 #include "widget.h"
+
 #include <QApplication>
 #include <QMainWindow>
 #include <QAction>
 #include <QToolBar>
+#include <QIcon>
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +20,10 @@ int main(int argc, char *argv[])
     menu_bar.addMenu(&settings_menu);
 
     QToolBar tool_bar("Tools", &w);
-    QAction open_connection("Connect", &tool_bar);
+    QIcon icon_test = QIcon(":/new/prefix1/images/stop.png");
+    QAction open_connection(icon_test, "Connect", &tool_bar);
+
+    //open_connection.setIcon(&start.png);
     tool_bar.addAction(&open_connection);
 
     w.show();
