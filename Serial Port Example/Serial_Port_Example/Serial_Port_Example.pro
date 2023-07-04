@@ -1,8 +1,10 @@
 QT       += core gui serialport
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++17
+
+QMAKE_CXXFLAGS += -Wa,-mbig-obj
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -11,10 +13,12 @@ CONFIG += c++17
 SOURCES += \
     dialog_uart.cpp \
     main.cpp \
+    qcustomplot.cpp \
     widget.cpp
 
 HEADERS += \
     dialog_uart.h \
+    qcustomplot.h \
     widget.h
 
 FORMS += \

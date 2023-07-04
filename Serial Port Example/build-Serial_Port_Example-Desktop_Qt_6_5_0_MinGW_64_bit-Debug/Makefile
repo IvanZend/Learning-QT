@@ -355,6 +355,7 @@ Makefile: ../Serial_Port_Example/Serial_Port_Example.pro ../../../../Qt/6.5.0/mi
 		../../../../Qt/6.5.0/mingw_64/mkspecs/features/yacc.prf \
 		../../../../Qt/6.5.0/mingw_64/mkspecs/features/lex.prf \
 		../Serial_Port_Example/Serial_Port_Example.pro \
+		../../../../Qt/6.5.0/mingw_64/lib/Qt6PrintSupport.prl \
 		../../../../Qt/6.5.0/mingw_64/lib/Qt6Widgets.prl \
 		../../../../Qt/6.5.0/mingw_64/lib/Qt6Gui.prl \
 		../../../../Qt/6.5.0/mingw_64/lib/Qt6SerialPort.prl \
@@ -648,6 +649,7 @@ Makefile: ../Serial_Port_Example/Serial_Port_Example.pro ../../../../Qt/6.5.0/mi
 ../../../../Qt/6.5.0/mingw_64/mkspecs/features/yacc.prf:
 ../../../../Qt/6.5.0/mingw_64/mkspecs/features/lex.prf:
 ../Serial_Port_Example/Serial_Port_Example.pro:
+../../../../Qt/6.5.0/mingw_64/lib/Qt6PrintSupport.prl:
 ../../../../Qt/6.5.0/mingw_64/lib/Qt6Widgets.prl:
 ../../../../Qt/6.5.0/mingw_64/lib/Qt6Gui.prl:
 ../../../../Qt/6.5.0/mingw_64/lib/Qt6SerialPort.prl:
