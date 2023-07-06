@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
@@ -21,19 +22,20 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
+    QFrame *wMenu;
+    QFrame *wConsole;
+    QFrame *wCenter;
     QCustomPlot *wGraph;
-    QWidget *wMenu;
-    QWidget *wSensors;
+    QFrame *wSensors;
     QSplitter *splitter;
     QProgressBar *progressBar;
     QProgressBar *progressBar_5;
-    QWidget *wConsole;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(986, 558);
+        Widget->resize(710, 551);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -104,18 +106,42 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush6);
 #endif
         Widget->setPalette(palette);
-        wGraph = new QCustomPlot(Widget);
-        wGraph->setObjectName("wGraph");
-        wGraph->setGeometry(QRect(440, 110, 281, 281));
-        wMenu = new QWidget(Widget);
+        wMenu = new QFrame(Widget);
         wMenu->setObjectName("wMenu");
-        wMenu->setGeometry(QRect(40, 10, 671, 80));
-        wSensors = new QWidget(Widget);
+        wMenu->setGeometry(QRect(10, 10, 681, 80));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(wMenu->sizePolicy().hasHeightForWidth());
+        wMenu->setSizePolicy(sizePolicy);
+        wMenu->setFrameShape(QFrame::Box);
+        wConsole = new QFrame(Widget);
+        wConsole->setObjectName("wConsole");
+        wConsole->setGeometry(QRect(10, 440, 681, 80));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(wConsole->sizePolicy().hasHeightForWidth());
+        wConsole->setSizePolicy(sizePolicy1);
+        wConsole->setFrameShape(QFrame::Box);
+        wCenter = new QFrame(Widget);
+        wCenter->setObjectName("wCenter");
+        wCenter->setGeometry(QRect(10, 100, 681, 331));
+        wCenter->setFrameShape(QFrame::Box);
+        wGraph = new QCustomPlot(wCenter);
+        wGraph->setObjectName("wGraph");
+        wGraph->setGeometry(QRect(390, 30, 281, 271));
+        sizePolicy1.setHeightForWidth(wGraph->sizePolicy().hasHeightForWidth());
+        wGraph->setSizePolicy(sizePolicy1);
+        wSensors = new QFrame(wCenter);
         wSensors->setObjectName("wSensors");
-        wSensors->setGeometry(QRect(50, 130, 321, 261));
+        wSensors->setGeometry(QRect(30, 30, 291, 271));
+        sizePolicy1.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
+        wSensors->setSizePolicy(sizePolicy1);
+        wSensors->setFrameShape(QFrame::Box);
         splitter = new QSplitter(wSensors);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(40, 20, 24, 124));
+        splitter->setGeometry(QRect(20, 10, 24, 124));
         splitter->setOrientation(Qt::Horizontal);
         progressBar = new QProgressBar(splitter);
         progressBar->setObjectName("progressBar");
@@ -126,12 +152,9 @@ public:
         progressBar_5 = new QProgressBar(wSensors);
         progressBar_5->setObjectName("progressBar_5");
         progressBar_5->setEnabled(true);
-        progressBar_5->setGeometry(QRect(70, 20, 24, 124));
+        progressBar_5->setGeometry(QRect(60, 10, 24, 124));
         progressBar_5->setValue(24);
         progressBar_5->setOrientation(Qt::Vertical);
-        wConsole = new QWidget(Widget);
-        wConsole->setObjectName("wConsole");
-        wConsole->setGeometry(QRect(80, 420, 501, 80));
 
         retranslateUi(Widget);
 
