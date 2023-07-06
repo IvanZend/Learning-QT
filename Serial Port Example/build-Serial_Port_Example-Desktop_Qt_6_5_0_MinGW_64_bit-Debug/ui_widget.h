@@ -12,19 +12,22 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QProgressBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Widget
 {
 public:
-    QProgressBar *progressBar_5;
-    QPushButton *pushButton_6;
+    QCustomPlot *wGraph;
+    QWidget *wMenu;
+    QWidget *wSensors;
     QSplitter *splitter;
     QProgressBar *progressBar;
+    QProgressBar *progressBar_5;
+    QWidget *wConsole;
 
     void setupUi(QWidget *Widget)
     {
@@ -101,18 +104,18 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush6);
 #endif
         Widget->setPalette(palette);
-        progressBar_5 = new QProgressBar(Widget);
-        progressBar_5->setObjectName("progressBar_5");
-        progressBar_5->setEnabled(true);
-        progressBar_5->setGeometry(QRect(300, 230, 24, 124));
-        progressBar_5->setValue(24);
-        progressBar_5->setOrientation(Qt::Vertical);
-        pushButton_6 = new QPushButton(Widget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(550, 350, 91, 41));
-        splitter = new QSplitter(Widget);
+        wGraph = new QCustomPlot(Widget);
+        wGraph->setObjectName("wGraph");
+        wGraph->setGeometry(QRect(440, 110, 281, 281));
+        wMenu = new QWidget(Widget);
+        wMenu->setObjectName("wMenu");
+        wMenu->setGeometry(QRect(40, 10, 671, 80));
+        wSensors = new QWidget(Widget);
+        wSensors->setObjectName("wSensors");
+        wSensors->setGeometry(QRect(50, 130, 321, 261));
+        splitter = new QSplitter(wSensors);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(260, 230, 24, 124));
+        splitter->setGeometry(QRect(40, 20, 24, 124));
         splitter->setOrientation(Qt::Horizontal);
         progressBar = new QProgressBar(splitter);
         progressBar->setObjectName("progressBar");
@@ -120,6 +123,15 @@ public:
         progressBar->setValue(24);
         progressBar->setOrientation(Qt::Vertical);
         splitter->addWidget(progressBar);
+        progressBar_5 = new QProgressBar(wSensors);
+        progressBar_5->setObjectName("progressBar_5");
+        progressBar_5->setEnabled(true);
+        progressBar_5->setGeometry(QRect(70, 20, 24, 124));
+        progressBar_5->setValue(24);
+        progressBar_5->setOrientation(Qt::Vertical);
+        wConsole = new QWidget(Widget);
+        wConsole->setObjectName("wConsole");
+        wConsole->setGeometry(QRect(80, 420, 501, 80));
 
         retranslateUi(Widget);
 
@@ -129,7 +141,6 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("Widget", "UART Settings", nullptr));
     } // retranslateUi
 
 };

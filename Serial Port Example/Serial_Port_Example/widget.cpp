@@ -22,12 +22,8 @@ Widget::~Widget()
     delete ui;
 }
 
+//uart_settings.show();
 
-void Widget::on_pushButton_6_clicked()
-{
-   //uart_settings.show();
-    d.show();
-}
 
 MenuBar::MenuBar(QMainWindow *parent)
     : QMenuBar(parent)

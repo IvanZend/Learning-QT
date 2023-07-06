@@ -33,12 +33,13 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    Ui::Widget *ui;
 
 private slots:
-    void on_pushButton_6_clicked();
+    //void on_pushButton_6_clicked();
 
 private:
-    Ui::Widget *ui;
+
     Dialog d;
     //QDialog uart_settings;
     //QString settings_file;
