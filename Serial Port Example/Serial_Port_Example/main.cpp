@@ -27,9 +27,13 @@ int main(int argc, char *argv[])
 
 
     QToolBar tool_bar("Tools", w.ui->wMenu);
-    QIcon icon_test = QIcon(":/new/prefix1/images/stop.png");
-    QAction open_connection(icon_test, "Connect", &tool_bar);
-    tool_bar.addAction(&open_connection);
+    QIcon icon_start = QIcon(":/new/prefix1/images/start.png");
+    QIcon icon_stop = QIcon(":/new/prefix1/images/stop.png");
+    QIcon icon_settings = QIcon(":/new/prefix1/images/settings.png");
+    QAction connection_open(icon_start, "Connect", &tool_bar);
+    QAction connection_settings(icon_settings, "Settings", &tool_bar);
+    tool_bar.addAction(&connection_open);
+    tool_bar.addAction(&connection_settings);
     top_bar_layout.addWidget(&tool_bar);
 
     QGridLayout main_layout(&w);

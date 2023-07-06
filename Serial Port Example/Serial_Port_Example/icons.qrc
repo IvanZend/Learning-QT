@@ -2,5 +2,6 @@
     <qresource prefix="/new/prefix1">
         <file>images/start.png</file>
         <file>images/stop.png</file>
+        <file>images/settings.png</file>
     </qresource>
 </RCC>
