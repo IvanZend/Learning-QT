@@ -118,7 +118,14 @@ debug/qrc_icons.cpp: ../Serial_Port_Example/icons.qrc \
 		../../../../Qt/6.5.0/mingw_64/bin/rcc.exe \
 		../Serial_Port_Example/images/start.png \
 		../Serial_Port_Example/images/stop.png \
-		../Serial_Port_Example/images/settings.png
+		../Serial_Port_Example/images/firmware.png \
+		../Serial_Port_Example/images/pause.png \
+		../Serial_Port_Example/images/log.png \
+		../Serial_Port_Example/images/settings.png \
+		../Serial_Port_Example/images/about.png \
+		../Serial_Port_Example/images/erase.png \
+		../Serial_Port_Example/images/bluetooth.png \
+		../Serial_Port_Example/images/connect.png
 	C:\Qt\6.5.0\mingw_64\bin\rcc.exe -name icons --no-zstd ..\Serial_Port_Example\icons.qrc -o debug\qrc_icons.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -2048,9 +2055,10 @@ debug/main.o: ../Serial_Port_Example/main.cpp ../Serial_Port_Example/widget.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QFrame \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QProgressBar \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qprogressbar.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QSplitter \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qsplitter.h \
 		../Serial_Port_Example/qcustomplot.h \
@@ -3179,9 +3187,10 @@ debug/widget.o: ../Serial_Port_Example/widget.cpp ../Serial_Port_Example/widget.
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QFrame \
+		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QProgressBar \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qprogressbar.h \
-		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qframe.h \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/QSplitter \
 		../../../../Qt/6.5.0/mingw_64/include/QtWidgets/qsplitter.h \
 		../Serial_Port_Example/qcustomplot.h \

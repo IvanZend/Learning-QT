@@ -3,5 +3,12 @@
         <file>images/start.png</file>
         <file>images/stop.png</file>
         <file>images/settings.png</file>
+        <file>images/about.png</file>
+        <file>images/bluetooth.png</file>
+        <file>images/connect.png</file>
+        <file>images/erase.png</file>
+        <file>images/firmware.png</file>
+        <file>images/log.png</file>
+        <file>images/pause.png</file>
     </qresource>
 </RCC>

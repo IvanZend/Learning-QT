@@ -14,6 +14,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QSplitter>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
 
@@ -24,6 +25,7 @@ class Ui_Widget
 public:
     QFrame *wMenu;
     QFrame *wConsole;
+    QTextBrowser *textBrowser_console;
     QFrame *wCenter;
     QCustomPlot *wGraph;
     QFrame *wSensors;
@@ -35,7 +37,7 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(710, 551);
+        Widget->resize(710, 553);
         QPalette palette;
         QBrush brush(QColor(0, 0, 0, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -118,12 +120,19 @@ public:
         wConsole = new QFrame(Widget);
         wConsole->setObjectName("wConsole");
         wConsole->setGeometry(QRect(10, 440, 681, 80));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(wConsole->sizePolicy().hasHeightForWidth());
         wConsole->setSizePolicy(sizePolicy1);
+        wConsole->setMinimumSize(QSize(0, 80));
+        wConsole->setMaximumSize(QSize(16777215, 80));
         wConsole->setFrameShape(QFrame::Box);
+        textBrowser_console = new QTextBrowser(wConsole);
+        textBrowser_console->setObjectName("textBrowser_console");
+        textBrowser_console->setGeometry(QRect(5, 10, 671, 61));
+        sizePolicy.setHeightForWidth(textBrowser_console->sizePolicy().hasHeightForWidth());
+        textBrowser_console->setSizePolicy(sizePolicy);
         wCenter = new QFrame(Widget);
         wCenter->setObjectName("wCenter");
         wCenter->setGeometry(QRect(10, 100, 681, 331));
@@ -131,13 +140,16 @@ public:
         wGraph = new QCustomPlot(wCenter);
         wGraph->setObjectName("wGraph");
         wGraph->setGeometry(QRect(390, 30, 281, 271));
-        sizePolicy1.setHeightForWidth(wGraph->sizePolicy().hasHeightForWidth());
-        wGraph->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(wGraph->sizePolicy().hasHeightForWidth());
+        wGraph->setSizePolicy(sizePolicy2);
         wSensors = new QFrame(wCenter);
         wSensors->setObjectName("wSensors");
-        wSensors->setGeometry(QRect(30, 30, 291, 271));
-        sizePolicy1.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
-        wSensors->setSizePolicy(sizePolicy1);
+        wSensors->setGeometry(QRect(10, 30, 311, 271));
+        sizePolicy2.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
+        wSensors->setSizePolicy(sizePolicy2);
         wSensors->setFrameShape(QFrame::Box);
         splitter = new QSplitter(wSensors);
         splitter->setObjectName("splitter");
@@ -164,6 +176,14 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
+        textBrowser_console->setHtml(QCoreApplication::translate("Widget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">console_output</p></body></html>", nullptr));
     } // retranslateUi
 
 };
