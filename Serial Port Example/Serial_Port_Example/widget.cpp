@@ -7,7 +7,7 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-
+    //emgs.resize(8);
     // Disable maximizing
     //setFixedSize(width(), height());
     // Adding title for widget
@@ -42,6 +42,20 @@ MenuBar::MenuBar(QWidget *parent)
 }
 
 MenuBar::~MenuBar()
+{
+
+}
+
+Emg::Emg(QWidget *parent)
+{
+    if (parent)
+    {
+
+    }
+
+}
+
+Emg::~Emg()
 {
 
 }

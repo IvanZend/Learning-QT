@@ -6,8 +6,12 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QMainWindow>
+#include <QProgressBar>
+#include <QList>
 
 #include "dialog_uart.h"
+
+#define NUMBER_OF_EMGS      8
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -26,6 +30,19 @@ public:
 
 };
 
+
+class Emg : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Emg(QWidget *parent = nullptr);
+    ~Emg();
+
+    QProgressBar emg_bar;
+
+};
+
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -34,6 +51,7 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     Ui::Widget *ui;
+
 
 private slots:
     //void on_pushButton_6_clicked();
@@ -61,6 +79,7 @@ class Dialog : public QDialog
 
 };
 */
+
 
 
 #endif // WIDGET_H

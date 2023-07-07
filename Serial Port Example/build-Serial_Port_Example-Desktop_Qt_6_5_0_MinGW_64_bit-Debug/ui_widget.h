@@ -31,7 +31,6 @@ public:
     QFrame *wSensors;
     QSplitter *splitter;
     QProgressBar *progressBar;
-    QProgressBar *progressBar_5;
 
     void setupUi(QWidget *Widget)
     {
@@ -141,15 +140,18 @@ public:
         wGraph->setObjectName("wGraph");
         wGraph->setGeometry(QRect(390, 30, 281, 271));
         QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setHorizontalStretch(2);
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(wGraph->sizePolicy().hasHeightForWidth());
         wGraph->setSizePolicy(sizePolicy2);
         wSensors = new QFrame(wCenter);
         wSensors->setObjectName("wSensors");
         wSensors->setGeometry(QRect(10, 30, 311, 271));
-        sizePolicy2.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
-        wSensors->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(1);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
+        wSensors->setSizePolicy(sizePolicy3);
         wSensors->setFrameShape(QFrame::Box);
         splitter = new QSplitter(wSensors);
         splitter->setObjectName("splitter");
@@ -161,12 +163,6 @@ public:
         progressBar->setValue(24);
         progressBar->setOrientation(Qt::Vertical);
         splitter->addWidget(progressBar);
-        progressBar_5 = new QProgressBar(wSensors);
-        progressBar_5->setObjectName("progressBar_5");
-        progressBar_5->setEnabled(true);
-        progressBar_5->setGeometry(QRect(60, 10, 24, 124));
-        progressBar_5->setValue(24);
-        progressBar_5->setOrientation(Qt::Vertical);
 
         retranslateUi(Widget);
 

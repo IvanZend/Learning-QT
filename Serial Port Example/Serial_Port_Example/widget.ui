@@ -554,7 +554,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="sizePolicy">
      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
+      <horstretch>2</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
@@ -570,7 +570,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="sizePolicy">
      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-      <horstretch>0</horstretch>
+      <horstretch>1</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
     </property>
@@ -600,25 +600,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
-    </widget>
-    <widget class="QProgressBar" name="progressBar_5">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>10</y>
-       <width>24</width>
-       <height>124</height>
-      </rect>
-     </property>
-     <property name="value">
-      <number>24</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
     </widget>
    </widget>
   </widget>

@@ -66,6 +66,21 @@ int main(int argc, char *argv[])
 
     w.show();
 
+    /*
+    QList<Emg> emgs(NUMBER_OF_EMGS);
+    QList<Emg>:: iterator i;
+    QGridLayout emg_layout;
+    for (i = emgs.begin(); i != emgs.end(); i++)
+    {
+        emg_layout.addWidget(i);
+    }
+    */
+
+    //Emg test_emg(w.ui->wSensors);
+    //w.emgs.push_back(test_emg);
+    //QGridLayout emg_layout(w.ui->wSensors);
+
+
     QHBoxLayout center_layout(w.ui->wCenter);
     center_layout.addWidget(w.ui->wSensors);
     center_layout.addWidget(w.ui->wGraph);
