@@ -9,6 +9,7 @@
 #include <QLayout>
 #include <QFrame>
 #include <QRect>
+#include <QVector>
 
 
 int main(int argc, char *argv[])
@@ -53,6 +54,15 @@ int main(int argc, char *argv[])
     QAction log(icon_log, "Log", &tool_bar);
     QAction pause(icon_pause, "Pause", &tool_bar);
 
+    QVector<int*> test_list(10);
+    QVector<int*>::iterator ii;
+
+
+    for (ii = test_list.begin(); ii != test_list.end(); ii++)
+    {
+        //&test_list[ii] = 0;
+    }
+
     tool_bar.addAction(&connect);
     tool_bar.addAction(&bluetooth);
     tool_bar.addAction(&start);
@@ -95,7 +105,6 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wCenter, 1, 0);
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
-
 
     /*
     QFrame menu_frame(&w);
