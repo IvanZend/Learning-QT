@@ -82,7 +82,6 @@ int main(int argc, char *argv[])
     emgs.push_back(&emg_8);
 
 
-
     for (int i = 0; i < emgs.size(); i++)
     {
         emgs[i]->setParent(w.ui->wSensors);
