@@ -54,14 +54,6 @@ int main(int argc, char *argv[])
     QAction log(icon_log, "Log", &tool_bar);
     QAction pause(icon_pause, "Pause", &tool_bar);
 
-    QVector<int*> test_list(10);
-    QVector<int*>::iterator ii;
-
-
-    for (ii = test_list.begin(); ii != test_list.end(); ii++)
-    {
-        //&test_list[ii] = 0;
-    }
 
     tool_bar.addAction(&connect);
     tool_bar.addAction(&bluetooth);
@@ -76,20 +68,32 @@ int main(int argc, char *argv[])
 
     w.show();
 
-    /*
-    QList<Emg> emgs(NUMBER_OF_EMGS);
-    QList<Emg>:: iterator i;
-    QGridLayout emg_layout;
-    for (i = emgs.begin(); i != emgs.end(); i++)
+
+    QVector<Emg*> emgs;
+    Emg emg_0(w.ui->wSensors);
+    emg_0.emg_bar.setOrientation(Qt::Vertical);
+    emg_0.emg_bar.setValue(70);
+    for (int i = 0; i < NUMBER_OF_EMGS; i++)
     {
-        emg_layout.addWidget(i);
+        emgs.push_back(&emg_0);
     }
+
+    QGridLayout emg_layout;
+    for (int i = 0; i < emgs.size(); i++)
+    {
+        emg_layout.addWidget(&emgs[i]->emg_bar);
+    }
+
+    /*
+    QProgressBar tmp_bar(w.ui->wSensors);
+    tmp_bar.setOrientation(Qt::Vertical);
+    tmp_bar.setValue(70);
+    tmp_bar.show();
+    emg_layout.addWidget(&tmp_bar);
+    emg_layout.addWidget(&emgs[0]->emg_bar);
     */
 
-    //Emg test_emg(w.ui->wSensors);
-    //w.emgs.push_back(test_emg);
-    //QGridLayout emg_layout(w.ui->wSensors);
-
+    w.ui->wSensors->setLayout(&emg_layout);
 
     QHBoxLayout center_layout(w.ui->wCenter);
     center_layout.addWidget(w.ui->wSensors);
@@ -106,18 +110,8 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
 
-    /*
-    QFrame menu_frame(&w);
-    QRect test_rect(10, 10, 200, 200);
-    menu_frame.setFrameShape(QFrame::Box);
-    menu_frame.setFrameStyle(QFrame::Panel | QFrame::Raised);
-    menu_frame.setFrameRect(test_rect);
-    */
+    //emgs[0]->emg_bar.show();
 
-    // QGridLayout child_layout;
-    // main_layout.addLayout(&child_layout, 0, 0, Qt::AlignLeft);
-
-    //w.show();
 
     return a.exec();
 }

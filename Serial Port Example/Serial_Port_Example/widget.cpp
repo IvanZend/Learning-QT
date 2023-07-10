@@ -52,7 +52,13 @@ Emg::Emg(QWidget *parent)
     {
 
     }
+    //emg_bar.show();
+}
 
+Emg::Emg(const Emg&)
+{
+
+    //emg_bar.show();
 }
 
 Emg::~Emg()

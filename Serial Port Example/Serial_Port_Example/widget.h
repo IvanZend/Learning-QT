@@ -37,6 +37,7 @@ class Emg : public QWidget
 
 public:
     Emg(QWidget *parent = nullptr);
+    Emg(const Emg &);
     ~Emg();
 
     QProgressBar emg_bar;

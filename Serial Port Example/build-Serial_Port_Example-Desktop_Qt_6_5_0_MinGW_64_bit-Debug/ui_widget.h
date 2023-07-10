@@ -12,8 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QProgressBar>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 #include "qcustomplot.h"
@@ -29,8 +27,6 @@ public:
     QFrame *wCenter;
     QCustomPlot *wGraph;
     QFrame *wSensors;
-    QSplitter *splitter;
-    QProgressBar *progressBar;
 
     void setupUi(QWidget *Widget)
     {
@@ -153,16 +149,6 @@ public:
         sizePolicy3.setHeightForWidth(wSensors->sizePolicy().hasHeightForWidth());
         wSensors->setSizePolicy(sizePolicy3);
         wSensors->setFrameShape(QFrame::Box);
-        splitter = new QSplitter(wSensors);
-        splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(20, 10, 24, 124));
-        splitter->setOrientation(Qt::Horizontal);
-        progressBar = new QProgressBar(splitter);
-        progressBar->setObjectName("progressBar");
-        progressBar->setEnabled(true);
-        progressBar->setValue(24);
-        progressBar->setOrientation(Qt::Vertical);
-        splitter->addWidget(progressBar);
 
         retranslateUi(Widget);
 
