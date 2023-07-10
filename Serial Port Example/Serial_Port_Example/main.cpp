@@ -70,19 +70,38 @@ int main(int argc, char *argv[])
 
 
     QVector<Emg*> emgs;
-    Emg emg_0(w.ui->wSensors);
-    emg_0.emg_bar.setOrientation(Qt::Vertical);
-    emg_0.emg_bar.setValue(70);
-    for (int i = 0; i < NUMBER_OF_EMGS; i++)
-    {
-        emgs.push_back(&emg_0);
-    }
+    Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
 
-    QGridLayout emg_layout;
+    emgs.push_back(&emg_1);
+    emgs.push_back(&emg_2);
+    emgs.push_back(&emg_3);
+    emgs.push_back(&emg_4);
+    emgs.push_back(&emg_5);
+    emgs.push_back(&emg_6);
+    emgs.push_back(&emg_7);
+    emgs.push_back(&emg_8);
+
+
+
     for (int i = 0; i < emgs.size(); i++)
     {
-        emg_layout.addWidget(&emgs[i]->emg_bar);
+        emgs[i]->setParent(w.ui->wSensors);
+        emgs[i]->emg_bar.setOrientation(Qt::Vertical);
+        emgs[i]->emg_bar.setValue(70);
     }
+
+
+    QHBoxLayout emg_layout;
+
+    for (int i = 0; i < emgs.size(); i++)
+    //for (int i = 0; i < 2; i++)
+    {
+        emg_layout.addWidget(&emgs[i]->emg_bar);
+
+        //emg_layout.addWidget(&tmp_bar);
+    }
+
+
 
     /*
     QProgressBar tmp_bar(w.ui->wSensors);
@@ -111,7 +130,6 @@ int main(int argc, char *argv[])
     w.setLayout(&main_layout);
 
     //emgs[0]->emg_bar.show();
-
 
     return a.exec();
 }
