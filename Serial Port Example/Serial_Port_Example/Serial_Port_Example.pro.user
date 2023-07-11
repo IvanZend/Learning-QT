@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 10.0.2, 2023-07-10T18:41:12. -->
+<!-- Written by QtCreator 10.0.2, 2023-07-11T10:15:09. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -239,8 +239,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/github/Learning-QT/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/github/Learning-QT/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Serial_Port_Example2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/github/armdesk/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/github/armdesk/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
