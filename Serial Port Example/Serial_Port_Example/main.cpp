@@ -69,9 +69,8 @@ int main(int argc, char *argv[])
     w.show();
 
 
-    QVector<Emg*> emgs;
-    Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
 
+    /*
     emgs.push_back(&emg_1);
     emgs.push_back(&emg_2);
     emgs.push_back(&emg_3);
@@ -80,22 +79,17 @@ int main(int argc, char *argv[])
     emgs.push_back(&emg_6);
     emgs.push_back(&emg_7);
     emgs.push_back(&emg_8);
+    */
 
 
-    for (int i = 0; i < emgs.size(); i++)
-    {
-        emgs[i]->setParent(w.ui->wSensors);
-        emgs[i]->emg_bar.setOrientation(Qt::Vertical);
-        emgs[i]->emg_bar.setValue(70);
-    }
 
 
     QHBoxLayout emg_layout;
 
-    for (int i = 0; i < emgs.size(); i++)
+    for (int i = 0; i < w.emgs.size(); i++)
     //for (int i = 0; i < 2; i++)
     {
-        emg_layout.addWidget(&emgs[i]->emg_bar);
+        emg_layout.addWidget(&w.emgs[i]->emg_bar);
 
         //emg_layout.addWidget(&tmp_bar);
     }

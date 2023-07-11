@@ -52,6 +52,8 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     Ui::Widget *ui;
+    Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
+    QVector<Emg*> emgs {&emg_1, &emg_2, &emg_3, &emg_4, &emg_5, &emg_6, &emg_7, &emg_8};
 
 
 private slots:
@@ -66,6 +68,7 @@ private:
     //MenuBar main_menu();
 
     QMenu file_menu;
+
 };
 
 

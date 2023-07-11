@@ -15,6 +15,14 @@ Widget::Widget(QWidget *parent)
 
 
     QWidget::setWindowTitle("Serial Port Example");
+
+    for (int i = 0; i < emgs.size(); i++)
+    {
+        emgs[i]->setParent(ui->wSensors);
+        emgs[i]->emg_bar.setOrientation(Qt::Vertical);
+        emgs[i]->emg_bar.setValue(70);
+    }
+
 }
 
 Widget::~Widget()
@@ -55,11 +63,13 @@ Emg::Emg(QWidget *parent)
     //emg_bar.show();
 }
 
+
 Emg::Emg(const Emg&)
 {
 
     //emg_bar.show();
 }
+
 
 Emg::~Emg()
 {
