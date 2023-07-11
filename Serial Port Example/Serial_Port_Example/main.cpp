@@ -69,33 +69,6 @@ int main(int argc, char *argv[])
     w.show();
 
 
-
-    /*
-    emgs.push_back(&emg_1);
-    emgs.push_back(&emg_2);
-    emgs.push_back(&emg_3);
-    emgs.push_back(&emg_4);
-    emgs.push_back(&emg_5);
-    emgs.push_back(&emg_6);
-    emgs.push_back(&emg_7);
-    emgs.push_back(&emg_8);
-    */
-
-
-
-
-    QHBoxLayout emg_layout;
-
-    for (int i = 0; i < w.emgs.size(); i++)
-    //for (int i = 0; i < 2; i++)
-    {
-        emg_layout.addWidget(&w.emgs[i]->emg_bar);
-
-        //emg_layout.addWidget(&tmp_bar);
-    }
-
-
-
     /*
     QProgressBar tmp_bar(w.ui->wSensors);
     tmp_bar.setOrientation(Qt::Vertical);
@@ -105,7 +78,7 @@ int main(int argc, char *argv[])
     emg_layout.addWidget(&emgs[0]->emg_bar);
     */
 
-    w.ui->wSensors->setLayout(&emg_layout);
+
 
     QHBoxLayout center_layout(w.ui->wCenter);
     center_layout.addWidget(w.ui->wSensors);

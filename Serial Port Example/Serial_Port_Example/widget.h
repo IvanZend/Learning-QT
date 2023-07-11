@@ -10,6 +10,7 @@
 #include <QList>
 
 #include "dialog_uart.h"
+#include "qboxlayout.h"
 
 #define NUMBER_OF_EMGS      8
 
@@ -54,7 +55,7 @@ public:
     Ui::Widget *ui;
     Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
     QVector<Emg*> emgs {&emg_1, &emg_2, &emg_3, &emg_4, &emg_5, &emg_6, &emg_7, &emg_8};
-
+    QHBoxLayout emg_layout;
 
 private slots:
     //void on_pushButton_6_clicked();

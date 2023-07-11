@@ -23,6 +23,13 @@ Widget::Widget(QWidget *parent)
         emgs[i]->emg_bar.setValue(70);
     }
 
+
+    for (int i = 0; i < emgs.size(); i++)
+    {
+        emg_layout.addWidget(&emgs[i]->emg_bar);
+    }
+
+    ui->wSensors->setLayout(&emg_layout);
 }
 
 Widget::~Widget()
@@ -64,7 +71,7 @@ Emg::Emg(QWidget *parent)
 }
 
 
-Emg::Emg(const Emg&)
+Emg::Emg(const Emg&) : QWidget()
 {
 
     //emg_bar.show();
