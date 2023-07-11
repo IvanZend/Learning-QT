@@ -46,7 +46,7 @@ public:
 
 };
 
-/*
+
 class Motor : public QWidget
 {
     Q_OBJECT
@@ -56,10 +56,10 @@ public:
     //Motor (const Motor &);
     ~Motor();
 
-    //QIcon icon_dial = QIcon(":/new/prefix1/images/dial.png");
-    //QIcon icon_needle = QIcon(":/new/prefix1/images/needle.png");
+    QIcon icon_dial;
+    QIcon icon_needle;
 };
-*/
+
 
 
 class Widget : public QWidget

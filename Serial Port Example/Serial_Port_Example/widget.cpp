@@ -30,6 +30,8 @@ Widget::Widget(QWidget *parent)
     }
 
     ui->wSensors->setLayout(&emg_layout);
+
+
 }
 
 Widget::~Widget()
@@ -83,19 +85,16 @@ Emg::~Emg()
 
 }
 
-/*
+
 Motor::Motor(QWidget *parent)
 {
     if (parent)
     {
 
     }
-}
 
-
-Motor::Motor(const Motor&) : QWidget()
-{
-
+    icon_dial = QIcon(":/new/prefix1/images/dial.png");
+    icon_needle = QIcon(":/new/prefix1/images/needle.png");
 }
 
 
@@ -103,4 +102,12 @@ Motor::~Motor()
 {
 
 }
+
+
+/*
+Motor::Motor(const Motor&) : QWidget()
+{
+
+}
+
 */
