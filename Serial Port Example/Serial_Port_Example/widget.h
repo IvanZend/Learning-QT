@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QProgressBar>
 #include <QList>
+#include <QToolBar>
 
 #include "dialog_uart.h"
 #include "qboxlayout.h"
@@ -44,6 +45,22 @@ public:
     QProgressBar emg_bar;
 
 };
+
+/*
+class Motor : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Motor (QWidget *parent = nullptr);
+    //Motor (const Motor &);
+    ~Motor();
+
+    //QIcon icon_dial = QIcon(":/new/prefix1/images/dial.png");
+    //QIcon icon_needle = QIcon(":/new/prefix1/images/needle.png");
+};
+*/
+
 
 class Widget : public QWidget
 {

@@ -10,5 +10,7 @@
         <file>images/firmware.png</file>
         <file>images/log.png</file>
         <file>images/pause.png</file>
+        <file>images/dial.png</file>
+        <file>images/needle.png</file>
     </qresource>
 </RCC>

@@ -82,3 +82,25 @@ Emg::~Emg()
 {
 
 }
+
+/*
+Motor::Motor(QWidget *parent)
+{
+    if (parent)
+    {
+
+    }
+}
+
+
+Motor::Motor(const Motor&) : QWidget()
+{
+
+}
+
+
+Motor::~Motor()
+{
+
+}
+*/
