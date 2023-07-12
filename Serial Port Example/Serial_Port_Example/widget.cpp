@@ -18,18 +18,24 @@ Widget::Widget(QWidget *parent)
 
     for (int i = 0; i < emgs.size(); i++)
     {
-        emgs[i]->setParent(ui->wSensors);
+        emgs[i]->setParent(ui->wEmgs);
         emgs[i]->emg_bar.setOrientation(Qt::Vertical);
         emgs[i]->emg_bar.setValue(70);
+
     }
 
 
-    for (int i = 0; i < emgs.size(); i++)
+    QPixmap pix_dial(":/new/prefix1/images/dial.png");
+    //QPixmap pix_needle(":/new/prefix1/images/needle.png");
+
+    for (int i = 0; i < motors.size(); i++)
     {
-        emg_layout.addWidget(&emgs[i]->emg_bar);
-    }
+        motors[i]->setParent(ui->wMotors);
 
-    ui->wSensors->setLayout(&emg_layout);
+        motors[i]->motor_lbl.setPixmap(pix_dial.scaled(60, 60, Qt::KeepAspectRatio));
+        //motors[i]->motor_lbl.setPixmap(pix_needle.scaled(40, 40, Qt::KeepAspectRatio));
+        motors[i]->motor_lbl.setParent(ui->wMotors);
+    }
 
 
 }
@@ -93,8 +99,7 @@ Motor::Motor(QWidget *parent)
 
     }
 
-    icon_dial = QIcon(":/new/prefix1/images/dial.png");
-    icon_needle = QIcon(":/new/prefix1/images/needle.png");
+
 }
 
 

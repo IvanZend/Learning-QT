@@ -546,10 +546,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QCustomPlot" name="wGraph" native="true">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>30</y>
-      <width>281</width>
-      <height>271</height>
+      <x>380</x>
+      <y>20</y>
+      <width>291</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -563,9 +563,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
-      <width>311</width>
-      <height>271</height>
+      <y>20</y>
+      <width>321</width>
+      <height>291</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -577,6 +577,50 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
+    <widget class="QFrame" name="wEmgs">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>301</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>3</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+    </widget>
+    <widget class="QFrame" name="wMotors">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>301</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

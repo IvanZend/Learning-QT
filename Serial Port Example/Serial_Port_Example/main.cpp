@@ -10,6 +10,8 @@
 #include <QFrame>
 #include <QRect>
 #include <QVector>
+#include <QPixmap>
+#include <QSizePolicy>
 
 
 int main(int argc, char *argv[])
@@ -66,6 +68,7 @@ int main(int argc, char *argv[])
     top_bar_layout.addWidget(&tool_bar);
 
 
+
     w.show();
 
 
@@ -78,6 +81,30 @@ int main(int argc, char *argv[])
     emg_layout.addWidget(&emgs[0]->emg_bar);
     */
 
+    QHBoxLayout emg_layout;
+    for (int i = 0; i < w.emgs.size(); i++)
+    {
+        emg_layout.addWidget(&w.emgs[i]->emg_bar);
+    }
+
+    w.ui->wEmgs->setLayout(&emg_layout);
+
+    QHBoxLayout motor_layout;
+
+    for (int i = 0; i < w.motors.size(); i++)
+    {
+        motor_layout.addWidget(&w.motors[i]->motor_lbl);
+    }
+
+    //motor_layout.setStretch(1, QSizePolicy::Expanding);
+    w.ui->wMotors->setLayout(&motor_layout);
+
+    QVBoxLayout sensors_layout(w.ui->wSensors);
+
+    sensors_layout.addWidget(w.ui->wEmgs);
+    sensors_layout.addWidget(w.ui->wMotors);
+
+    w.ui->wSensors->setLayout(&sensors_layout);
 
 
     QHBoxLayout center_layout(w.ui->wCenter);
@@ -95,7 +122,11 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
 
-    //emgs[0]->emg_bar.show();
+    for (int i = 0; i < w.motors.size(); i++)
+    {
+        w.motors[i]->motor_lbl.show();
+    }
+
 
     return a.exec();
 }

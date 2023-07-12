@@ -9,9 +9,10 @@
 #include <QProgressBar>
 #include <QList>
 #include <QToolBar>
+#include <QPixmap>
+#include <QLabel>
 
 #include "dialog_uart.h"
-#include "qboxlayout.h"
 
 #define NUMBER_OF_EMGS      8
 
@@ -43,7 +44,7 @@ public:
     ~Emg();
 
     QProgressBar emg_bar;
-
+    QLabel eng_lbl;
 };
 
 
@@ -56,8 +57,9 @@ public:
     //Motor (const Motor &);
     ~Motor();
 
-    QIcon icon_dial;
-    QIcon icon_needle;
+    QLabel motor_lbl;
+    //QPixmap pix_dial;
+    //QPixmap pix_needle;
 };
 
 
@@ -72,7 +74,12 @@ public:
     Ui::Widget *ui;
     Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
     QVector<Emg*> emgs {&emg_1, &emg_2, &emg_3, &emg_4, &emg_5, &emg_6, &emg_7, &emg_8};
-    QHBoxLayout emg_layout;
+    ;
+
+    QMenu file_menu;
+    Motor motor_1, motor_2, motor_3, motor_4, motor_5, motor_6;
+    QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
+
 
 private slots:
     //void on_pushButton_6_clicked();
@@ -80,12 +87,11 @@ private slots:
 private:
 
     Dialog d;
+
     //QDialog uart_settings;
     //QString settings_file;
 
     //MenuBar main_menu();
-
-    QMenu file_menu;
 
 };
 
