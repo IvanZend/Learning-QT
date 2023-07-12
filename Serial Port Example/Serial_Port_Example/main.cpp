@@ -81,13 +81,21 @@ int main(int argc, char *argv[])
     emg_layout.addWidget(&emgs[0]->emg_bar);
     */
 
-    QHBoxLayout emg_layout;
+    //QWidget single_emg_wgt;
+    //QVBoxLayout single_emg_layout;
+    QVBoxLayout emg_layout;
     for (int i = 0; i < w.emgs.size(); i++)
     {
+        //w.emgs[i]->emg_bar.setTextVisible(true);
+        w.emgs[i]->emg_bar.setFormat("EMG " + QString::number(i + 1));
+        //w.emgs[i]->emg_bar.setFixedHeight(100);
         emg_layout.addWidget(&w.emgs[i]->emg_bar);
+        //emg_layout.addWidget(&w.emgs[i]->emg_lbl);
     }
 
     w.ui->wEmgs->setLayout(&emg_layout);
+
+    //w.emgs[1]->emg_bar.setSizePolicy(QSizePolicy::Minimum);
 
     QHBoxLayout motor_layout;
 
@@ -127,6 +135,14 @@ int main(int argc, char *argv[])
         w.motors[i]->motor_lbl.show();
     }
 
+    /*
+    QProgressBar test_prgrs(&w);
+    test_prgrs.setValue(40);
+    //test_prgrs.setTextDirection(QProgressBar::);
+    test_prgrs.setOrientation(Qt::Vertical);
+    //test_prgrs.setTextVisible(true);
+    test_prgrs.show();
+    */
 
     return a.exec();
 }

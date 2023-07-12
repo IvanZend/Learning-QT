@@ -44,7 +44,7 @@ public:
     ~Emg();
 
     QProgressBar emg_bar;
-    QLabel eng_lbl;
+    //QLabel emg_lbl;
 };
 
 

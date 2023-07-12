@@ -1,7 +1,6 @@
 #include "widget.h"
 #include "ui_widget.h"
 
-
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
@@ -19,9 +18,9 @@ Widget::Widget(QWidget *parent)
     for (int i = 0; i < emgs.size(); i++)
     {
         emgs[i]->setParent(ui->wEmgs);
-        emgs[i]->emg_bar.setOrientation(Qt::Vertical);
+        emgs[i]->emg_bar.setOrientation(Qt::Horizontal);
         emgs[i]->emg_bar.setValue(70);
-
+        //emgs[i]->emg_lbl.setText("EMG_0");
     }
 
 
@@ -45,7 +44,7 @@ Widget::~Widget()
     delete ui;
 }
 
-//uart_settings.show();
+//uart_settings.show();Pro
 
 
 MenuBar::MenuBar(QMainWindow *parent)
