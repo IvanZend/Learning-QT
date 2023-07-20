@@ -12,9 +12,10 @@
 #include <QPixmap>
 #include <QLabel>
 #include <QPainter>
+#include <QAction>
 
 #include "dialog_uart.h"
-#include "qboxlayout.h"
+
 
 #define NUMBER_OF_EMGS      8
 
@@ -84,13 +85,15 @@ public:
     QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
     //QVector<Motor*> motors {&motor_1};
 
+    Dialog d;
 
 private slots:
     //void on_pushButton_6_clicked();
+    void open_uart_settings();
 
 private:
 
-    Dialog d;
+
 
     //QDialog uart_settings;
     //QString settings_file;

@@ -10,14 +10,16 @@ Widget::Widget(QWidget *parent)
     // Disable maximizing
     //setFixedSize(width(), height());
     // Adding title for widget
-    //connect(this, SLOT(clicked()), this, SLOT(on_pushButton_6_clicked()));
+
+
+    //connect(icon_settings, SLOT(clicked()), this, SLOT(on_pushButton_6_clicked()));
 
 
     QWidget::setWindowTitle("Serial Port Example");
 
     for (int i = 0; i < emgs.size(); i++)
     {
-        emgs[i]->emg_bar.setValue(70);
+        emgs[i]->emg_bar.setValue(0);
     }
 
 
@@ -37,7 +39,7 @@ Widget::Widget(QWidget *parent)
         //motors[i]->motor_lbl.setScaledContents(true);
         //motors[i]->motor_lbl.setAlignment(Qt::AlignCenter);
 
-        motors[i]->motor_bar.setValue(30);
+        motors[i]->motor_bar.setValue(0);
         //motors[i]->motor_bar.setOrientation(Qt::Vertical);
         motors[i]->fault_light.setPixmap(QPixmap(":/new/prefix1/images/grey_light.png").scaled(15,15));
     }
@@ -50,6 +52,10 @@ Widget::~Widget()
 
 //uart_settings.show();Pro
 
+void Widget::open_uart_settings()
+{
+    d.show();
+}
 
 MenuBar::MenuBar(QMainWindow *parent)
     : QMenuBar(parent)

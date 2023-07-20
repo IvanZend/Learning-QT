@@ -58,6 +58,7 @@ int main(int argc, char *argv[])
     QAction pause(icon_pause, "Pause", &tool_bar);
 
 
+    tool_bar.addAction(&settings);
     tool_bar.addAction(&connect);
     tool_bar.addAction(&bluetooth);
     tool_bar.addAction(&start);
@@ -69,9 +70,7 @@ int main(int argc, char *argv[])
     top_bar_layout.addWidget(&tool_bar);
 
 
-
     w.show();
-
 
     /*
     QProgressBar tmp_bar(w.ui->wSensors);
@@ -149,6 +148,10 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wCenter, 1, 0);
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
+
+
+    QTimer poll_timer;
+
 
 
     //w.motors[0]->motor_lbl.show();
