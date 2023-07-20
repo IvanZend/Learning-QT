@@ -14,6 +14,7 @@
 #include <QPainter>
 
 #include "dialog_uart.h"
+#include "qboxlayout.h"
 
 #define NUMBER_OF_EMGS      8
 
@@ -59,6 +60,8 @@ public:
     ~Motor();
 
     QLabel motor_lbl;
+    QProgressBar motor_bar;
+    QLabel fault_light;
     //QPixmap pix_dial;
     //QPixmap pix_needle;
 };
@@ -78,8 +81,8 @@ public:
 
     QMenu file_menu;
     Motor motor_1, motor_2, motor_3, motor_4, motor_5, motor_6;
-    //QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
-    QVector<Motor*> motors {&motor_1};
+    QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
+    //QVector<Motor*> motors {&motor_1};
 
 
 private slots:

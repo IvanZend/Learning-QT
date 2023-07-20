@@ -12,5 +12,8 @@
         <file>images/pause.png</file>
         <file>images/dial.png</file>
         <file>images/needle.png</file>
+        <file>images/green_light.png</file>
+        <file>images/red_light.png</file>
+        <file>images/grey_light.png</file>
     </qresource>
 </RCC>

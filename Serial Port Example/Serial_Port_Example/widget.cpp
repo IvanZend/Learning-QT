@@ -21,9 +21,9 @@ Widget::Widget(QWidget *parent)
     }
 
 
-    QPixmap pix_dial(":/new/prefix1/images/dial.png");
-    QPixmap pix_needle(":/new/prefix1/images/needle.png");
-    QPixmap speedometer(60, 60);
+    //QPixmap pix_dial(":/new/prefix1/images/dial.png");
+    //QPixmap pix_needle(":/new/prefix1/images/needle.png");
+    //QPixmap speedometer(60, 60);
 
     for (int i = 0; i < motors.size(); i++)
     {
@@ -33,14 +33,14 @@ Widget::Widget(QWidget *parent)
         //painter_tmp.drawPixmap(0, 0, pix_dial);
         //painter_tmp.drawPixmap(20, 20, pix_needle);
         //motors[i]->motor_lbl.setPixmap(speedometer.scaled(60, 60, Qt::KeepAspectRatio, Qt::FastTransformation));
-        motors[i]->motor_lbl.setPixmap(pix_needle/*.scaled(40, 40, Qt::KeepAspectRatio)*/);
+        //motors[i]->motor_lbl.setPixmap(pix_needle/*.scaled(40, 40, Qt::KeepAspectRatio)*/);
         //motors[i]->motor_lbl.setScaledContents(true);
-        motors[i]->motor_lbl.setAlignment(Qt::AlignCenter);
+        //motors[i]->motor_lbl.setAlignment(Qt::AlignCenter);
 
-
+        motors[i]->motor_bar.setValue(30);
+        //motors[i]->motor_bar.setOrientation(Qt::Vertical);
+        motors[i]->fault_light.setPixmap(QPixmap(":/new/prefix1/images/grey_light.png").scaled(15,15));
     }
-
-
 }
 
 Widget::~Widget()

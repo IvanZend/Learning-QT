@@ -98,11 +98,30 @@ int main(int argc, char *argv[])
 
     //w.emgs[1]->emg_bar.setSizePolicy(QSizePolicy::Minimum);
 
-    QHBoxLayout motor_layout;
+    QGridLayout motor_layout;
 
     for (int i = 0; i < w.motors.size(); i++)
     {
-        motor_layout.addWidget(&w.motors[i]->motor_lbl);
+
+        //w.motors[i]->mot_bar_lay.setParent(&w.motors[i]->motor_bar_light);
+        //w.motors[i]->mot_bar_lay.addWidget(&w.motors[i]->fault_light);
+        //w.motors[i]->mot_bar_lay.addWidget(&w.motors[i]->motor_bar);
+        //motor_layout.addWidget(&w.motors[i]->motor_lbl);
+        int row_tmp, column_tmp;
+        if (i <(w.motors.size()/2))
+        {
+            column_tmp = 0;
+            row_tmp = i;
+        }
+        else
+        {
+            column_tmp = 2;
+            row_tmp = i - (w.motors.size()/2);
+        }
+
+        motor_layout.addWidget(&w.motors[i]->fault_light, row_tmp, column_tmp);
+        motor_layout.addWidget(&w.motors[i]->motor_bar, row_tmp, column_tmp + 1);
+        w.motors[i]->motor_bar.setFormat("Motor " + QString::number(i + 1));
     }
 
     //motor_layout.setStretch(1, QSizePolicy::Expanding);
@@ -132,7 +151,7 @@ int main(int argc, char *argv[])
     w.setLayout(&main_layout);
 
 
-    w.motors[0]->motor_lbl.show();
+    //w.motors[0]->motor_lbl.show();
 
     /*
     for (int i = 0; i < w.motors.size(); i++)
