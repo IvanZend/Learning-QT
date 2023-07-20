@@ -1,3 +1,4 @@
+#include "qobjectdefs.h"
 #include "widget.h"
 #include "ui_widget.h"
 
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
     top_bar_layout.addWidget(&menu_bar);
     */
 
-    QToolBar tool_bar("Tools", w.ui->wMenu);
+    ToolBar tool_bar(w.ui->wMenu);
     QIcon icon_start = QIcon(":/new/prefix1/images/start.png");
     //QIcon icon_stop = QIcon(":/new/prefix1/images/stop.png");
     QIcon icon_settings = QIcon(":/new/prefix1/images/settings.png");
@@ -49,7 +50,7 @@ int main(int argc, char *argv[])
     QAction start(icon_start, "Start", &tool_bar);
     //QAction stop(icon_stop, "Stop", &tool_bar);
     QAction settings(icon_settings, "Settings", &tool_bar);
-    QAction connect(icon_connect, "Connect", &tool_bar);
+    QAction connection(icon_connect, "Connect", &tool_bar);
     QAction bluetooth(icon_bluetooth, "Bluetooth", &tool_bar);
     QAction about(icon_about, "About", &tool_bar);
     QAction erase(icon_erase, "Erasae", &tool_bar);
@@ -57,9 +58,8 @@ int main(int argc, char *argv[])
     QAction log(icon_log, "Log", &tool_bar);
     QAction pause(icon_pause, "Pause", &tool_bar);
 
-
     tool_bar.addAction(&settings);
-    tool_bar.addAction(&connect);
+    tool_bar.addAction(&connection);
     tool_bar.addAction(&bluetooth);
     tool_bar.addAction(&start);
     tool_bar.addAction(&pause);
@@ -69,6 +69,7 @@ int main(int argc, char *argv[])
     tool_bar.addAction(&about);
     top_bar_layout.addWidget(&tool_bar);
 
+    QObject::connect(&settings, SIGNAL(triggered()), &w, SLOT(open_uart_settings()));
 
     w.show();
 

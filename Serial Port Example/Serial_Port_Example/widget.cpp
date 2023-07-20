@@ -50,12 +50,12 @@ Widget::~Widget()
     delete ui;
 }
 
-//uart_settings.show();Pro
-
 void Widget::open_uart_settings()
 {
     d.show();
 }
+
+//uart_settings.show();Pro
 
 MenuBar::MenuBar(QMainWindow *parent)
     : QMenuBar(parent)
@@ -87,19 +87,16 @@ Emg::Emg(QWidget *parent)
     //emg_bar.show();
 }
 
-
 Emg::Emg(const Emg&) : QWidget()
 {
 
     //emg_bar.show();
 }
 
-
 Emg::~Emg()
 {
 
 }
-
 
 Motor::Motor(QWidget *parent)
 {
@@ -111,8 +108,20 @@ Motor::Motor(QWidget *parent)
 
 }
 
-
 Motor::~Motor()
+{
+
+}
+
+ToolBar::ToolBar(QWidget *parent)
+{
+    if (parent)
+    {
+
+    }
+}
+
+ToolBar::~ToolBar()
 {
 
 }

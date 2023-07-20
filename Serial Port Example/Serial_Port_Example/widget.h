@@ -67,7 +67,16 @@ public:
     //QPixmap pix_needle;
 };
 
+class ToolBar : public QToolBar
+{
+    Q_OBJECT
 
+public:
+    ToolBar(QWidget *parent);
+    ~ToolBar();
+
+    //void open_uart_settings(QDialog* dialog_to_open);
+};
 
 class Widget : public QWidget
 {
@@ -87,7 +96,7 @@ public:
 
     Dialog d;
 
-private slots:
+public slots:
     //void on_pushButton_6_clicked();
     void open_uart_settings();
 
