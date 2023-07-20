@@ -165,7 +165,6 @@ void Dialog::receiveMessage()
         ui->textBrowser->append(message);
         buffer.remove(0,index+codeSize);
     }
-
 }
 
 void Dialog::on_pushButton_clicked()

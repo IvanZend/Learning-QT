@@ -12,6 +12,7 @@
 #include <QVector>
 #include <QPixmap>
 #include <QSizePolicy>
+#include <QLabel>
 
 
 int main(int argc, char *argv[])
@@ -130,10 +131,15 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
 
+
+    w.motors[0]->motor_lbl.show();
+
+    /*
     for (int i = 0; i < w.motors.size(); i++)
     {
         w.motors[i]->motor_lbl.show();
     }
+    */
 
     /*
     QProgressBar test_prgrs(&w);
@@ -143,6 +149,17 @@ int main(int argc, char *argv[])
     //test_prgrs.setTextVisible(true);
     test_prgrs.show();
     */
+
+    //QLabel test_lbl(&w);
+    //QPixmap pxmp_tmp(":/new/prefix1/images/needle.png");
+    //QPainter pntr_tmp(&w);
+    //QPoint tmp_pnt;
+    //pntr_tmp.drawPixmap(tmp_pnt, pxmp_tmp);
+    //test_lbl.setScaledContents(true);
+    //test_lbl.setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    //test_lbl.setPixmap(pxmp_tmp.scaled(40, 400, Qt::KeepAspectRatio));
+
+    //test_lbl.show();
 
     return a.exec();
 }

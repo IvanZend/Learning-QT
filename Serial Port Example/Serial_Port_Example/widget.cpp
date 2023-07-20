@@ -17,23 +17,27 @@ Widget::Widget(QWidget *parent)
 
     for (int i = 0; i < emgs.size(); i++)
     {
-        emgs[i]->setParent(ui->wEmgs);
-        emgs[i]->emg_bar.setOrientation(Qt::Horizontal);
         emgs[i]->emg_bar.setValue(70);
-        //emgs[i]->emg_lbl.setText("EMG_0");
     }
 
 
     QPixmap pix_dial(":/new/prefix1/images/dial.png");
-    //QPixmap pix_needle(":/new/prefix1/images/needle.png");
+    QPixmap pix_needle(":/new/prefix1/images/needle.png");
+    QPixmap speedometer(60, 60);
 
     for (int i = 0; i < motors.size(); i++)
     {
-        motors[i]->setParent(ui->wMotors);
+        //QPainter painter_tmp(&motors[i]->motor_lbl);
+       // QPoint tmp_pnt_1;
+        //painter_tmp.drawPixmap(tmp_pnt_1, pix_dial);
+        //painter_tmp.drawPixmap(0, 0, pix_dial);
+        //painter_tmp.drawPixmap(20, 20, pix_needle);
+        //motors[i]->motor_lbl.setPixmap(speedometer.scaled(60, 60, Qt::KeepAspectRatio, Qt::FastTransformation));
+        motors[i]->motor_lbl.setPixmap(pix_needle/*.scaled(40, 40, Qt::KeepAspectRatio)*/);
+        //motors[i]->motor_lbl.setScaledContents(true);
+        motors[i]->motor_lbl.setAlignment(Qt::AlignCenter);
 
-        motors[i]->motor_lbl.setPixmap(pix_dial.scaled(60, 60, Qt::KeepAspectRatio));
-        //motors[i]->motor_lbl.setPixmap(pix_needle.scaled(40, 40, Qt::KeepAspectRatio));
-        motors[i]->motor_lbl.setParent(ui->wMotors);
+
     }
 
 

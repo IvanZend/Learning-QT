@@ -11,6 +11,7 @@
 #include <QToolBar>
 #include <QPixmap>
 #include <QLabel>
+#include <QPainter>
 
 #include "dialog_uart.h"
 
@@ -74,11 +75,11 @@ public:
     Ui::Widget *ui;
     Emg emg_1, emg_2, emg_3, emg_4, emg_5, emg_6, emg_7, emg_8;
     QVector<Emg*> emgs {&emg_1, &emg_2, &emg_3, &emg_4, &emg_5, &emg_6, &emg_7, &emg_8};
-    ;
 
     QMenu file_menu;
     Motor motor_1, motor_2, motor_3, motor_4, motor_5, motor_6;
-    QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
+    //QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
+    QVector<Motor*> motors {&motor_1};
 
 
 private slots:
