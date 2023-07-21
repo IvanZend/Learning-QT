@@ -2,7 +2,7 @@
 #include "ui_dialog_uart.h"
 
 
-QSettings settings(QSettings::UserScope, "uart_baudrate");
+QSettings settings(QSettings::UserScope, "uart_baudrate", "data_bits");
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -23,18 +23,40 @@ Dialog::Dialog(QWidget *parent) :
     ui->comboBox->addItems(stringPorts);
 
     // Baud Rate Ratios
-    QList<qint32> baudRates = info.standardBaudRates(); // What baudrates does my computer support ?
-    QList<QString> stringBaudRates;
+    QVector<qint32> baudRates = info.standardBaudRates(); // What baudrates does my computer support ?
+    QVector<QString> stringBaudRates;
     for(int i = 0 ; i < baudRates.size() ; i++){
         stringBaudRates.append(QString::number(baudRates.at(i)));
     }
     ui->comboBox_2->addItems(stringBaudRates);
+
+    for (int i = 0 ; i < stringBaudRates.size() ; i++)
+    {
+        if (stringBaudRates[i] == settings.value("uart_baudrate").toString())
+        {
+            ui->comboBox_2->setCurrentIndex(i);
+        }
+    }
+    //ui->comboBox_2->setItemText(-1, settings.value("uart_baudrate").toString());
 
     // Data Bits
     ui->comboBox_3->addItem("5");
     ui->comboBox_3->addItem("6");
     ui->comboBox_3->addItem("7");
     ui->comboBox_3->addItem("8");
+
+    ui->comboBox_3->size();
+
+    for (int i = 0; i < (ui->comboBox_3->count()); i++)
+    {
+        if ((ui->comboBox_3->itemText(i)) == settings.value("data_bits").toString())
+        {
+            ui->comboBox_2->setCurrentIndex(i);
+        }
+    }
+
+    //ui->comboBox_3->setItemText(0, settings.value("data_bits").toString());
+
 
     // Stop Bits
     ui->comboBox_4->addItem("1 Bit");
@@ -49,15 +71,18 @@ Dialog::Dialog(QWidget *parent) :
     ui->comboBox_5->addItem("Space Parity");
 
     //Flow Controls
+
+    /*
     ui->comboBox_6->addItem("No Flow Control");
     ui->comboBox_6->addItem("Hardware Flow Control");
     ui->comboBox_6->addItem("Software Flow Control");
+    */
 
-    ui->label_8->setText(settings.value("uart_baudrate").toString());
 }
 
 Dialog::~Dialog()
 {
+
     delete ui;
 }
 
@@ -70,11 +95,11 @@ void Dialog::on_pushButton_2_clicked()
 
     serial_pointer->open(QIODevice::ReadWrite);
 
-    if(!serial_pointer->isOpen()){
-        ui->textBrowser->setTextColor(Qt::red);
-        ui->textBrowser->append("!!!! Something went Wrong !!!!");
-    }
-    else {
+    //if(!serial_pointer->isOpen()){
+        //ui->textBrowser->setTextColor(Qt::red);
+        //ui->textBrowser->append("!!!! Something went Wrong !!!!");
+    //}
+    //else {
 
         QString stringbaudRate = ui->comboBox_2->currentText();
         int intbaudRate = stringbaudRate.toInt();
@@ -123,6 +148,7 @@ void Dialog::on_pushButton_2_clicked()
         }
 
 
+        /*
         QString flowControl = ui->comboBox_6->currentText();
         if(flowControl == "No Flow Control") {
             serial_pointer->setFlowControl(QSerialPort::NoFlowControl);
@@ -133,18 +159,19 @@ void Dialog::on_pushButton_2_clicked()
         else if(flowControl == "Software Flow Control") {
             serial_pointer->setFlowControl(QSerialPort::SoftwareControl);
         }
+        */
 
-        code = ui->lineEdit->text();
+        //code = ui->lineEdit->text();
         codeSize = code.size();
 
-        connect(serial_pointer,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
+        //connect(serial_pointer,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
 
-        //settings_file = QApplication::applicationDirPath() + "demosettings.ini";
+    //}
 
-        settings.setValue("uart_baudrate", serial_pointer->baudRate());
-        ui->label_8->setText(settings.value("uart_baudrate").toString());
-    }
+    settings.setValue("uart_baudrate", serial_pointer->baudRate());
+    settings.setValue("data_bits", serial_pointer->dataBits());
 
+    this->close();
 }
 
 /*
@@ -156,7 +183,7 @@ If it is found,i display the part of the message until the code. And i remove th
 If it is not found i keep storing received message in buffer.
 */
 
-
+/*
 void Dialog::receiveMessage()
 {
     QByteArray dataBA = serial_pointer->readAll();
@@ -170,7 +197,9 @@ void Dialog::receiveMessage()
         buffer.remove(0,index+codeSize);
     }
 }
+*/
 
+/*
 void Dialog::on_pushButton_clicked()
 {
     QString message = ui->lineEdit_2->text();
@@ -178,13 +207,15 @@ void Dialog::on_pushButton_clicked()
     ui->textBrowser->append(message);
     serial_pointer->write(message.toUtf8());
 }
-
+*/
 
 // Button of Disconnect
+/*
 void Dialog::on_pushButton_3_clicked()
 {
     serial_pointer->close();
 }
+*/
 
 // Button of Refresh Ports
 void Dialog::on_pushButton_4_clicked()
@@ -201,6 +232,6 @@ void Dialog::on_pushButton_4_clicked()
 // Button of Clear
 void Dialog::on_pushButton_5_clicked()
 {
-    ui->textBrowser->clear();
+    //ui->textBrowser->clear();
 }
 
