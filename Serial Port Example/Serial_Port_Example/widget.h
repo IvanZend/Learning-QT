@@ -74,8 +74,6 @@ class ToolBar : public QToolBar
 public:
     ToolBar(QWidget *parent);
     ~ToolBar();
-
-    //void open_uart_settings(QDialog* dialog_to_open);
 };
 
 class Widget : public QWidget

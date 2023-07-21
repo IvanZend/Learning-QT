@@ -55,7 +55,6 @@ void Widget::open_uart_settings()
     d.show();
 }
 
-//uart_settings.show();Pro
 
 MenuBar::MenuBar(QMainWindow *parent)
     : QMenuBar(parent)

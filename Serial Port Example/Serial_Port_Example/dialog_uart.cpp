@@ -2,7 +2,7 @@
 #include "ui_dialog_uart.h"
 
 
-QSettings settings("uart_baudrate");
+QSettings settings(QSettings::UserScope, "uart_baudrate");
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -199,3 +199,4 @@ void Dialog::on_pushButton_5_clicked()
 {
     ui->textBrowser->clear();
 }
+

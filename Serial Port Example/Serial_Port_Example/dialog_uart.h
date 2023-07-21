@@ -18,7 +18,7 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
-private slots:
+public slots:
     void receiveMessage();
     void on_pushButton_clicked();
     void on_pushButton_2_clicked();
