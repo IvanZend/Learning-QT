@@ -8,6 +8,10 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
 {
+    serial_pointer = nullptr;
+    //serial_pointer->setBaudRate(QSerialPort::BaudRate(9600));
+    //serial_pointer = serial;
+
     ui->setupUi(this);
 
     // Ports
@@ -62,11 +66,11 @@ void Dialog::on_pushButton_2_clicked()
 {
 
     QString portName = ui->comboBox->currentText();
-    serialPort.setPortName(portName);
+    serial_pointer->setPortName(portName);
 
-    serialPort.open(QIODevice::ReadWrite);
+    serial_pointer->open(QIODevice::ReadWrite);
 
-    if(!serialPort.isOpen()){
+    if(!serial_pointer->isOpen()){
         ui->textBrowser->setTextColor(Qt::red);
         ui->textBrowser->append("!!!! Something went Wrong !!!!");
     }
@@ -74,70 +78,70 @@ void Dialog::on_pushButton_2_clicked()
 
         QString stringbaudRate = ui->comboBox_2->currentText();
         int intbaudRate = stringbaudRate.toInt();
-        serialPort.setBaudRate(intbaudRate);
+        serial_pointer->setBaudRate(intbaudRate);
 
         QString dataBits = ui->comboBox_3->currentText();
         if(dataBits == "5 Bits") {
-            serialPort.setDataBits(QSerialPort::Data5);
+            serial_pointer->setDataBits(QSerialPort::Data5);
         }
         else if((dataBits == "6 Bits")) {
-            serialPort.setDataBits(QSerialPort::Data6);
+            serial_pointer->setDataBits(QSerialPort::Data6);
         }
         else if(dataBits == "7 Bits") {
-            serialPort.setDataBits(QSerialPort::Data7);
+            serial_pointer->setDataBits(QSerialPort::Data7);
         }
         else if(dataBits == "8 Bits"){
-            serialPort.setDataBits(QSerialPort::Data8);
+            serial_pointer->setDataBits(QSerialPort::Data8);
         }
 
         QString stopBits = ui->comboBox_4->currentText();
         if(stopBits == "1 Bit") {
-            serialPort.setStopBits(QSerialPort::OneStop);
+            serial_pointer->setStopBits(QSerialPort::OneStop);
         }
         else if(stopBits == "1,5 Bits") {
-            serialPort.setStopBits(QSerialPort::OneAndHalfStop);
+            serial_pointer->setStopBits(QSerialPort::OneAndHalfStop);
         }
         else if(stopBits == "2 Bits") {
-            serialPort.setStopBits(QSerialPort::TwoStop);
+            serial_pointer->setStopBits(QSerialPort::TwoStop);
         }
 
         QString parity = ui->comboBox_5->currentText();
         if(parity == "No Parity"){
-            serialPort.setParity(QSerialPort::NoParity);
+            serial_pointer->setParity(QSerialPort::NoParity);
         }
         else if(parity == "Even Parity"){
-            serialPort.setParity(QSerialPort::EvenParity);
+            serial_pointer->setParity(QSerialPort::EvenParity);
         }
         else if(parity == "Odd Parity"){
-            serialPort.setParity(QSerialPort::OddParity);
+            serial_pointer->setParity(QSerialPort::OddParity);
         }
         else if(parity == "Mark Parity"){
-            serialPort.setParity(QSerialPort::MarkParity);
+            serial_pointer->setParity(QSerialPort::MarkParity);
         }
         else if(parity == "Space Parity") {
-            serialPort.setParity(QSerialPort::SpaceParity);
+            serial_pointer->setParity(QSerialPort::SpaceParity);
         }
 
 
         QString flowControl = ui->comboBox_6->currentText();
         if(flowControl == "No Flow Control") {
-            serialPort.setFlowControl(QSerialPort::NoFlowControl);
+            serial_pointer->setFlowControl(QSerialPort::NoFlowControl);
         }
         else if(flowControl == "Hardware Flow Control") {
-            serialPort.setFlowControl(QSerialPort::HardwareControl);
+            serial_pointer->setFlowControl(QSerialPort::HardwareControl);
         }
         else if(flowControl == "Software Flow Control") {
-            serialPort.setFlowControl(QSerialPort::SoftwareControl);
+            serial_pointer->setFlowControl(QSerialPort::SoftwareControl);
         }
 
         code = ui->lineEdit->text();
         codeSize = code.size();
 
-        connect(&serialPort,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
+        connect(serial_pointer,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
 
         //settings_file = QApplication::applicationDirPath() + "demosettings.ini";
 
-        settings.setValue("uart_baudrate", serialPort.baudRate());
+        settings.setValue("uart_baudrate", serial_pointer->baudRate());
         ui->label_8->setText(settings.value("uart_baudrate").toString());
     }
 
@@ -155,7 +159,7 @@ If it is not found i keep storing received message in buffer.
 
 void Dialog::receiveMessage()
 {
-    QByteArray dataBA = serialPort.readAll();
+    QByteArray dataBA = serial_pointer->readAll();
     QString data(dataBA);
     buffer.append(data);
     int index = buffer.indexOf(code);
@@ -172,14 +176,14 @@ void Dialog::on_pushButton_clicked()
     QString message = ui->lineEdit_2->text();
     ui->textBrowser->setTextColor(Qt::darkGreen); // Color of message to send is green.
     ui->textBrowser->append(message);
-    serialPort.write(message.toUtf8());
+    serial_pointer->write(message.toUtf8());
 }
 
 
 // Button of Disconnect
 void Dialog::on_pushButton_3_clicked()
 {
-    serialPort.close();
+    serial_pointer->close();
 }
 
 // Button of Refresh Ports

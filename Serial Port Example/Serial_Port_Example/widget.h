@@ -36,7 +36,6 @@ public:
 
 };
 
-
 class Emg : public QWidget
 {
     Q_OBJECT
@@ -92,6 +91,7 @@ public:
     QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
     //QVector<Motor*> motors {&motor_1};
 
+    QSerialPort serialPort;
     Dialog d;
 
 public slots:

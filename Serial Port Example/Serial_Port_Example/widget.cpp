@@ -43,6 +43,8 @@ Widget::Widget(QWidget *parent)
         //motors[i]->motor_bar.setOrientation(Qt::Vertical);
         motors[i]->fault_light.setPixmap(QPixmap(":/new/prefix1/images/grey_light.png").scaled(15,15));
     }
+
+    d.serial_pointer = &serialPort;
 }
 
 Widget::~Widget()

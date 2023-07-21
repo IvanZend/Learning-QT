@@ -15,8 +15,10 @@ class Dialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dialog(QWidget *parent = nullptr);
+    //explicit Dialog(QWidget *parent = nullptr);
+    Dialog(QWidget *parent = nullptr);
     ~Dialog();
+    QSerialPort* serial_pointer;
 
 public slots:
     void receiveMessage();
@@ -26,13 +28,16 @@ public slots:
     void on_pushButton_4_clicked();
     void on_pushButton_5_clicked();
 
+
 private:
+    //QSerialPort* serial_pointer;
     Ui::Dialog *ui;
-    QSerialPort serialPort;
+    //QSerialPort serialPort;
     QSerialPortInfo info;
     QString buffer;
     QString code;
     int codeSize;
+
 };
 
 #endif // DIALOG_UART_H
