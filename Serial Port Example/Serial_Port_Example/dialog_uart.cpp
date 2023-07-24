@@ -3,7 +3,7 @@
 
 
 QSettings settings_0(QSettings::UserScope, "uart_baudrate");
-//QSettings settings_1(QSettings::UserScope, "data_bits");
+QSettings settings_1(QSettings::UserScope, "data_bits");
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -47,16 +47,14 @@ Dialog::Dialog(QWidget *parent) :
     ui->comboBox_3->addItem("7");
     ui->comboBox_3->addItem("8");
 
-    ui->comboBox_3->size();
+    //ui->comboBox_3->size();
 
     for (int i = 0; i < (ui->comboBox_3->count()); i++)
     {
-        /*
-        if ((ui->comboBox_3->itemText(i)) == settings_1.value("data_bits").toString())
+        if (ui->comboBox_3->itemText(i) == settings_1.value("data_bits"))
         {
-            ui->comboBox_2->setCurrentIndex(i);
+            ui->comboBox_3->setCurrentIndex(i);
         }
-        */
     }
 
     //ui->comboBox_3->setItemText(0, settings.value("data_bits").toString());
@@ -173,7 +171,7 @@ void Dialog::on_pushButton_2_clicked()
     //}
 
     settings_0.setValue("uart_baudrate", serial_pointer->baudRate());
-    //settings_1.setValue("data_bits", serial_pointer->dataBits());
+    settings_1.setValue("data_bits", serial_pointer->dataBits());
 
     this->close();
 }
