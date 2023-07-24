@@ -2,7 +2,9 @@
 #include "ui_dialog_uart.h"
 
 
-QSettings settings(QSettings::UserScope, "uart_baudrate", "data_bits");
+QSettings settings_0(QSettings::UserScope, "uart_baudrate");
+//QSettings settings_1(QSettings::UserScope, "data_bits");
+
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -32,7 +34,7 @@ Dialog::Dialog(QWidget *parent) :
 
     for (int i = 0 ; i < stringBaudRates.size() ; i++)
     {
-        if (stringBaudRates[i] == settings.value("uart_baudrate").toString())
+        if (stringBaudRates[i] == settings_0.value("uart_baudrate").toString())
         {
             ui->comboBox_2->setCurrentIndex(i);
         }
@@ -49,10 +51,12 @@ Dialog::Dialog(QWidget *parent) :
 
     for (int i = 0; i < (ui->comboBox_3->count()); i++)
     {
-        if ((ui->comboBox_3->itemText(i)) == settings.value("data_bits").toString())
+        /*
+        if ((ui->comboBox_3->itemText(i)) == settings_1.value("data_bits").toString())
         {
             ui->comboBox_2->setCurrentIndex(i);
         }
+        */
     }
 
     //ui->comboBox_3->setItemText(0, settings.value("data_bits").toString());
@@ -168,8 +172,8 @@ void Dialog::on_pushButton_2_clicked()
 
     //}
 
-    settings.setValue("uart_baudrate", serial_pointer->baudRate());
-    settings.setValue("data_bits", serial_pointer->dataBits());
+    settings_0.setValue("uart_baudrate", serial_pointer->baudRate());
+    //settings_1.setValue("data_bits", serial_pointer->dataBits());
 
     this->close();
 }
