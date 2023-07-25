@@ -3,6 +3,7 @@
 
 
 QSettings settings_0(QSettings::UserScope, "uart_baudrate", "data_bits");
+QSettings settings_1(QSettings::UserScope, "stop_bits", "parity");
 
 
 Dialog::Dialog(QWidget *parent) :
@@ -38,15 +39,12 @@ Dialog::Dialog(QWidget *parent) :
             ui->comboBox_2->setCurrentIndex(i);
         }
     }
-    //ui->comboBox_2->setItemText(-1, settings.value("uart_baudrate").toString());
 
     // Data Bits
     ui->comboBox_3->addItem("5");
     ui->comboBox_3->addItem("6");
     ui->comboBox_3->addItem("7");
     ui->comboBox_3->addItem("8");
-
-    //ui->comboBox_3->size();
 
     for (int i = 0; i < (ui->comboBox_3->count()); i++)
     {
@@ -56,13 +54,43 @@ Dialog::Dialog(QWidget *parent) :
         }
     }
 
-    //ui->comboBox_3->setItemText(0, settings.value("data_bits").toString());
-
-
     // Stop Bits
     ui->comboBox_4->addItem("1 Bit");
     ui->comboBox_4->addItem("1,5 Bits");
     ui->comboBox_4->addItem("2 Bits");
+
+    QString stop_bits_tmp;
+    switch (settings_1.value("stop_bits").toInt())
+    {
+    case 1:
+    {
+        stop_bits_tmp = "1 Bit";
+        break;
+    }
+    case 3:
+    {
+        stop_bits_tmp = "1,5 Bits";
+        break;
+    }
+    case 2:
+    {
+        stop_bits_tmp = "2 Bits";
+        break;
+    }
+    default:
+    {
+        stop_bits_tmp = "1 Bit";
+        break;
+    }
+    }
+
+    for (int i = 0; i < (ui->comboBox_4->count()); i++)
+    {
+        if (ui->comboBox_4->itemText(i) == stop_bits_tmp)
+        {
+            ui->comboBox_4->setCurrentIndex(i);
+        }
+    }
 
     // Parities
     ui->comboBox_5->addItem("No Parity");
@@ -70,6 +98,50 @@ Dialog::Dialog(QWidget *parent) :
     ui->comboBox_5->addItem("Odd Parity");
     ui->comboBox_5->addItem("Mark Parity");
     ui->comboBox_5->addItem("Space Parity");
+
+    QString parity_tmp;
+    switch (settings_1.value("parity").toInt())
+    {
+    case 0:
+    {
+        parity_tmp = "No Parity";
+        break;
+    }
+    case 2:
+    {
+        parity_tmp = "Even Parity";
+        break;
+    }
+    case 3:
+    {
+        parity_tmp = "Odd Parity";
+        break;
+    }
+    case 5:
+    {
+        parity_tmp = "Mark Parity";
+        break;
+    }
+    case 4:
+    {
+        parity_tmp = "Space Parity";
+        break;
+    }
+    default:
+    {
+        parity_tmp = "No Parity";
+        break;
+    }
+    }
+
+    for (int i = 0; i < (ui->comboBox_5->count()); i++)
+    {
+        if (ui->comboBox_5->itemText(i) == parity_tmp)
+        {
+            ui->comboBox_5->setCurrentIndex(i);
+        }
+    }
+
 
     //Flow Controls
 
@@ -171,6 +243,9 @@ void Dialog::on_pushButton_2_clicked()
 
     settings_0.setValue("uart_baudrate", serial_pointer->baudRate());
     settings_0.setValue("data_bits", serial_pointer->dataBits());
+    settings_1.setValue("stop_bits", serial_pointer->stopBits());
+    settings_1.setValue("parity", serial_pointer->parity());
+
 
     this->close();
 }
