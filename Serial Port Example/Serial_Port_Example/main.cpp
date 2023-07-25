@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     top_bar_layout.addWidget(&tool_bar);
 
     QObject::connect(&settings, SIGNAL(triggered()), &w, SLOT(open_uart_settings()));
-    QObject::connect(&connection, SIGNAL(triggered), &w, SLOT(connect_uart()));
+    QObject::connect(&connection, SIGNAL(triggered()), &w, SLOT(connect_uart()));
 
 
     w.show();

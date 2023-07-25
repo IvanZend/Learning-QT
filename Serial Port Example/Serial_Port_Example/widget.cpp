@@ -71,12 +71,12 @@ void Widget::connect_uart()
     if (serial_port.isOpen())
     {
        serial_port.close();
-        poll_timer.stop();
+        //poll_timer.stop();
     }
     else
     {
        serial_port.open(QIODevice::ReadWrite);
-       poll_timer.start(100);
+       //poll_timer.start(100);
     }
 }
 
