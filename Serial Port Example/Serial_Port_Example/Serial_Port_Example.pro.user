@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 10.0.1, 2023-05-31T18:02:47. -->
+<!-- Written by QtCreator 10.0.2, 2023-07-25T16:51:32. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{382bd09a-26f0-46e4-94f7-4095fb0d42e5}</value>
+  <value type="QByteArray">{0f332ed6-9a87-4781-abe9-b5224c2a6e72}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -80,6 +80,9 @@
     <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
     <value type="bool" key="ClangTools.UseGlobalSettings">true</value>
+   </valuemap>
+   <valuemap type="QVariantMap" key="CppEditor.QuickFix">
+    <value type="bool" key="UseGlobalSettings">true</value>
    </valuemap>
   </valuemap>
  </data>
@@ -236,8 +239,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/github/Learning-QT/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/github/Learning-QT/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Serial_Port_Example2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/github/armdesk/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/github/armdesk/Serial Port Example/Serial_Port_Example/Serial_Port_Example.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
