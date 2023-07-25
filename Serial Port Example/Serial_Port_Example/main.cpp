@@ -51,6 +51,8 @@ int main(int argc, char *argv[])
     //QAction stop(icon_stop, "Stop", &tool_bar);
     QAction settings(icon_settings, "Settings", &tool_bar);
     QAction connection(icon_connect, "Connect", &tool_bar);
+    connection.setCheckable(true);
+
     QAction bluetooth(icon_bluetooth, "Bluetooth", &tool_bar);
     QAction about(icon_about, "About", &tool_bar);
     QAction erase(icon_erase, "Erasae", &tool_bar);
@@ -151,7 +153,6 @@ int main(int argc, char *argv[])
     main_layout.addWidget(w.ui->wCenter, 1, 0);
     main_layout.addWidget(w.ui->wConsole, 2, 0);
     w.setLayout(&main_layout);
-
 
 
     //w.motors[0]->motor_lbl.show();
