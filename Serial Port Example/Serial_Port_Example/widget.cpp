@@ -45,8 +45,10 @@ Widget::Widget(QWidget *parent)
     }
 
     d.serial_pointer = &serial_port;
+    codeSize = code.size();
 
     connect(&poll_timer, SIGNAL(timeout()), this, SLOT(check_uart()));
+    connect(&serial_port,SIGNAL(readyRead()),this, SLOT(receiveMessage()));
 }
 
 void Widget::check_uart()
@@ -78,6 +80,20 @@ void Widget::connect_uart()
     }
 }
 
+
+void Widget::receiveMessage()
+{
+    QByteArray dataBA = serial_port.readAll();
+    QString data(dataBA);
+    buffer.append(data);
+    int index = buffer.indexOf(code);
+    if(index != -1){
+       QString message = buffer.mid(0,index);
+       //ui->textBrowser->setTextColor(Qt::blue); // Receieved message's color is blue.
+       //ui->textBrowser->append(message);
+       buffer.remove(0,index+codeSize);
+    }
+}
 
 MenuBar::MenuBar(QMainWindow *parent)
     : QMenuBar(parent)

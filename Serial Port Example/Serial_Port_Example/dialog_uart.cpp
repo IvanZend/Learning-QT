@@ -235,7 +235,7 @@ void Dialog::on_pushButton_2_clicked()
         */
 
         //code = ui->lineEdit->text();
-        codeSize = code.size();
+
 
         //connect(serial_pointer,SIGNAL(readyRead()),this,SLOT(receiveMessage()));
 

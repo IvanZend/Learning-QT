@@ -34,9 +34,9 @@ private:
     Ui::Dialog *ui;
     //QSerialPort serialPort;
     QSerialPortInfo info;
-    QString buffer;
-    QString code;
-    int codeSize;
+    //QString buffer;
+    //QString code;
+    //int codeSize;
 
 };
 

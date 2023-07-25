@@ -95,12 +95,16 @@ public:
     QSerialPort serial_port;
     Dialog d;
     QTimer poll_timer;
+    QString buffer;
+    QString code;
+    int codeSize;
 
 public slots:
     //void on_pushButton_6_clicked();
     void open_uart_settings();
     void check_uart();
     void connect_uart();
+    void receiveMessage();
 
 private:
 
