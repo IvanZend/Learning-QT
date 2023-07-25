@@ -44,7 +44,14 @@ Widget::Widget(QWidget *parent)
         motors[i]->fault_light.setPixmap(QPixmap(":/new/prefix1/images/grey_light.png").scaled(15,15));
     }
 
-    d.serial_pointer = &serialPort;
+    d.serial_pointer = &serial_port;
+
+    connect(&poll_timer, SIGNAL(timeout()), this, SLOT(check_uart()));
+}
+
+void Widget::check_uart()
+{
+
 }
 
 Widget::~Widget()
@@ -55,6 +62,20 @@ Widget::~Widget()
 void Widget::open_uart_settings()
 {
     d.show();
+}
+
+void Widget::connect_uart()
+{
+    if (serial_port.isOpen())
+    {
+       serial_port.close();
+        poll_timer.stop();
+    }
+    else
+    {
+       serial_port.open(QIODevice::ReadWrite);
+       poll_timer.start(100);
+    }
 }
 
 
@@ -105,7 +126,6 @@ Motor::Motor(QWidget *parent)
     {
 
     }
-
 
 }
 

@@ -166,7 +166,7 @@ void Dialog::on_pushButton_2_clicked()
     QString portName = ui->comboBox->currentText();
     serial_pointer->setPortName(portName);
 
-    serial_pointer->open(QIODevice::ReadWrite);
+    //serial_pointer->open(QIODevice::ReadWrite);
 
     //if(!serial_pointer->isOpen()){
         //ui->textBrowser->setTextColor(Qt::red);

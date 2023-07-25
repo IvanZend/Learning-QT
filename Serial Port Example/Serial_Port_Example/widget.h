@@ -15,6 +15,7 @@
 #include <QAction>
 
 #include "dialog_uart.h"
+#include "qtimer.h"
 
 
 #define NUMBER_OF_EMGS      8
@@ -91,12 +92,15 @@ public:
     QVector<Motor*> motors {&motor_1, &motor_2, &motor_3, &motor_4, &motor_5, &motor_6};
     //QVector<Motor*> motors {&motor_1};
 
-    QSerialPort serialPort;
+    QSerialPort serial_port;
     Dialog d;
+    QTimer poll_timer;
 
 public slots:
     //void on_pushButton_6_clicked();
     void open_uart_settings();
+    void check_uart();
+    void connect_uart();
 
 private:
 
