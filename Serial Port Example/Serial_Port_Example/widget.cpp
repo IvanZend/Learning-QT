@@ -80,12 +80,93 @@ void Widget::connect_uart()
     }
 }
 
+void Widget::parse_uart()
+{
+
+    for (int i = 0; i < buffer.size(); i++)
+    {
+       if (buffer.at(i) == 'a')
+       {
+           while (buffer.at(i) != 'b')
+           {
+               i++;
+
+               QString hardware_string;
+               for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
+               {
+                   hardware_string.append(buffer.at(ii + i + 1));
+               }
+
+               bool tmp_ok;
+               int hardware_val = hardware_string.toInt(&tmp_ok, 16);
+
+               switch (buffer.at(i).toLatin1())
+               {
+               case 0x01:
+               {
+                   hardware_val = 0;
+                   break;
+               }
+               case 0x02:
+               {
+
+                   break;
+               }
+               case 0x03:
+               {
+
+                   break;
+               }
+               case 0x04:
+               {
+
+                   break;
+               }
+               case 0x05:
+               {
+
+                   break;
+               }
+               case 0x06:
+               {
+
+                   break;
+               }
+               default:
+               {
+
+                   break;
+               }
+
+               }
+
+               i += UART_PACKAGE_SIZE;
+           }
+       }
+    }
+}
+
+
+/*
+int Widget::uart_val_to_int()
+{
+
+}
+*/
+
 
 void Widget::receiveMessage()
 {
-    QByteArray dataBA = serial_port.readAll();
-    QString data(dataBA);
-    buffer.append(data);
+    //QByteArray dataBA = serial_port.readAll();
+    //QString data(dataBA);
+    //buffer.append(data);
+
+    buffer = serial_port.readAll();
+
+    parse_uart();
+
+
+    /*
     int index = buffer.indexOf(code);
     if(index != -1){
        QString message = buffer.mid(0,index);
@@ -93,6 +174,7 @@ void Widget::receiveMessage()
        //ui->textBrowser->append(message);
        buffer.remove(0,index+codeSize);
     }
+    */
 }
 
 MenuBar::MenuBar(QMainWindow *parent)

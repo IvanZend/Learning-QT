@@ -19,6 +19,7 @@
 
 
 #define NUMBER_OF_EMGS      8
+#define UART_PACKAGE_SIZE	4
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -105,9 +106,10 @@ public slots:
     void check_uart();
     void connect_uart();
     void receiveMessage();
+    void parse_uart();
+    //int  uart_val_to_int();
 
 private:
-
 
 
     //QDialog uart_settings;
