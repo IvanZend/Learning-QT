@@ -46,6 +46,11 @@ Widget::Widget(QWidget *parent)
 
     //serial_port.baudRate()
 
+    serial_port.setBaudRate(settings_0.value("uart_baudrate").toInt());
+    //serial_port.setDataBits(settings_0.value("data_bits"));
+    //serial_port.setStopBits(settings_1.value("stop_bits").toInt());
+    //serial_port.setParity(settings_1.value("parity").toInt());
+
     d.serial_pointer = &serial_port;
     codeSize = code.size();
 

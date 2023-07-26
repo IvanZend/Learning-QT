@@ -6,6 +6,9 @@
 #include <QSerialPortInfo>
 #include <QSettings>
 
+extern QSettings settings_0, settings_1;
+
+
 namespace Ui {
 class Dialog;
 }
