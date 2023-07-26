@@ -42,10 +42,13 @@ class Emg : public QWidget
 {
     Q_OBJECT
 
+
 public:
     Emg(QWidget *parent = nullptr);
     Emg(const Emg &);
     ~Emg();
+
+    void set_value_bar(int emg_val);
 
     QProgressBar emg_bar;
     //QLabel emg_lbl;

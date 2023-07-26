@@ -44,6 +44,8 @@ Widget::Widget(QWidget *parent)
         motors[i]->fault_light.setPixmap(QPixmap(":/new/prefix1/images/grey_light.png").scaled(15,15));
     }
 
+    //serial_port.baudRate()
+
     d.serial_pointer = &serial_port;
     codeSize = code.size();
 
@@ -90,7 +92,7 @@ void Widget::parse_uart()
            while (buffer.at(i) != 'b')
            {
                i++;
-
+               /*
                QString hardware_string;
                for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
                {
@@ -99,12 +101,22 @@ void Widget::parse_uart()
 
                bool tmp_ok;
                int hardware_val = hardware_string.toInt(&tmp_ok, 16);
+               */
 
                switch (buffer.at(i).toLatin1())
                {
                case 0x01:
                {
-                   hardware_val = 0;
+                   QString hardware_string;
+                   for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
+                   {
+                       hardware_string.append(buffer.at(i + 1 + ii));
+                   }
+
+                   bool tmp_ok;
+                   int hardware_val = hardware_string.toInt(&tmp_ok);
+                   emgs[0]->set_value_bar(hardware_val);
+
                    break;
                }
                case 0x02:
@@ -216,6 +228,11 @@ Emg::Emg(const Emg&) : QWidget()
 Emg::~Emg()
 {
 
+}
+
+void Emg::set_value_bar(int emg_val)
+{
+    emg_bar.setValue(emg_val);
 }
 
 Motor::Motor(QWidget *parent)
