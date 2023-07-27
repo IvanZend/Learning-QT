@@ -20,6 +20,8 @@ Widget::Widget(QWidget *parent)
     for (int i = 0; i < emgs.size(); i++)
     {
         emgs[i]->emg_bar.setValue(0);
+        emgs[i]->emg_bar.setMinimum(0);
+        emgs[i]->emg_bar.setMaximum(500);
     }
 
 
@@ -223,13 +225,16 @@ int Widget::uart_val_to_int()
 
 void Widget::receiveMessage()
 {
-    //QByteArray dataBA = serial_port.readAll();
-    //QString data(dataBA);
-    //buffer.append(data);
+    QByteArray dataBA = serial_port.readAll();
+    QString data(dataBA);
+    buffer.append(data);
 
-    buffer = serial_port.readAll();
 
-    parse_uart();
+    if (buffer[buffer.size() - 1].toLatin1() == 0x62)
+    {
+       parse_uart();
+       buffer.remove(0, (buffer.size() - 1));
+    }
 
 
     /*
