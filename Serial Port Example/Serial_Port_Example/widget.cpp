@@ -92,12 +92,54 @@ void Widget::parse_uart()
 
     for (int i = 0; i < buffer.size(); i++)
     {
-       if (buffer.at(i) == 'a')
+
+       switch (buffer.at(i).toLatin1())
        {
-           while (buffer.at(i) != 'b')
+       case 0x01:
+       {
+           QString hardware_string;
+           for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
            {
                i++;
-               /*
+               if (i < buffer.size())
+               {
+                   hardware_string.append(buffer.at(i));
+                   bool tmp_ok;
+                   int hardware_val = hardware_string.toInt(&tmp_ok);
+                   emgs[0]->set_value_bar(hardware_val);
+               }
+           }
+
+           break;
+       }
+       }
+
+       /*
+       if (buffer.at(i).toLatin1() == 0x01)
+       {
+           QString hardware_string;
+           for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
+           {
+               hardware_string.append(buffer.at(i + 1 + ii));
+           }
+
+           bool tmp_ok;
+           int hardware_val = hardware_string.toInt(&tmp_ok);
+
+
+
+           //emgs[0]->set_value_bar(hardware_val);
+       }
+       */
+
+
+       /*
+       if (buffer.at(i) == 'a')
+       {
+           //while (buffer.at(i) != 'b')
+           //{
+               i++;
+
                QString hardware_string;
                for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
                {
@@ -106,12 +148,14 @@ void Widget::parse_uart()
 
                bool tmp_ok;
                int hardware_val = hardware_string.toInt(&tmp_ok, 16);
-               */
+
 
                switch (buffer.at(i).toLatin1())
                {
                case 0x01:
                {
+
+
                    QString hardware_string;
                    for (int ii = 0; ii < UART_PACKAGE_SIZE; ii++)
                    {
@@ -120,7 +164,9 @@ void Widget::parse_uart()
 
                    bool tmp_ok;
                    int hardware_val = hardware_string.toInt(&tmp_ok);
-                   emgs[0]->set_value_bar(hardware_val);
+
+
+                   //emgs[0]->set_value_bar(hardware_val);
 
                    break;
                }
@@ -155,11 +201,14 @@ void Widget::parse_uart()
                    break;
                }
 
-               }
+               //}
 
-               i += UART_PACKAGE_SIZE;
+               //i += UART_PACKAGE_SIZE;
            }
+
        }
+
+       */
     }
 }
 

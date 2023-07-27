@@ -306,8 +306,9 @@ void Dialog::on_pushButton_4_clicked()
 }
 
 // Button of Clear
+/*
 void Dialog::on_pushButton_5_clicked()
 {
     //ui->textBrowser->clear();
 }
-
+*/
