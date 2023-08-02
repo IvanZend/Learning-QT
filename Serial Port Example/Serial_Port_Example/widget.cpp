@@ -21,7 +21,7 @@ Widget::Widget(QWidget *parent)
     {
         emgs[i]->emg_bar.setValue(0);
         emgs[i]->emg_bar.setMinimum(0);
-        emgs[i]->emg_bar.setMaximum(500);
+        emgs[i]->emg_bar.setMaximum(1000);
     }
 
 
